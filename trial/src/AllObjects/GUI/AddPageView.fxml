@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="400.0" prefWidth="359.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="AllObjects.GUI.AddPageController">
+    <children>
+
+        <Button layoutX="50.0" layoutY="50.0" onAction="#addExchange" prefWidth="200.0" text="dodaj gielde" />
+        <Button layoutX="50.0" layoutY="100.0" onAction="#addInvestor" prefWidth="200.0" text="dodaj inwestora"/>
+        <Button layoutX="50.0" layoutY="150.0" onAction="#addInvestmentFund" prefWidth="200.0" text="dodaj funsusz inwestycyjny"/>
+        <Button layoutX="50.0" layoutY="200.0" onAction="#addCompany" prefWidth="200.0" text="dodaj spolke"/>
+        <Button layoutX="50.0" layoutY="250.0" onAction="#addCurrency" prefWidth="200.0" text="dodaj walute"/>
+
+    </children>
+
+</AnchorPane>

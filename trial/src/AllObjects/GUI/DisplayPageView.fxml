@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="AllObjects.GUI.DisplayPageController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <Button layoutX="50.0" layoutY="50.0" onAction="#displayExchange" prefWidth="200.0" text="wyswietl gieldy" />
+    <Button layoutX="50.0" layoutY="100.0" onAction="#displayInvestor" prefWidth="200.0" text="wyswietl inwestorow"/>
+    <Button layoutX="50.0" layoutY="150.0" onAction="#displayInvestmentFund" prefWidth="200.0" text="wyswietl funsusze inwestycyjne"/>
+    <Button layoutX="50.0" layoutY="200.0" onAction="#displayCompany" prefWidth="200.0" text="wyswietl spolki"/>
+    <Button layoutX="50.0" layoutY="250.0" onAction="#displayCurrency" prefWidth="200.0" text="wyswietl waluty"/>
+    <Button layoutX="50.0" layoutY="300.0" onAction="#back" prefWidth="200.0" prefHeight="50.0" text="cofnij" />
+
+    
+
+</AnchorPane>
