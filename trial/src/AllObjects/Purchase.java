@@ -2,15 +2,32 @@ package AllObjects;
 
 public class Purchase {
 
-    int id;
-    double amount;
+    private int clientId;
+    private double amount;
+    private int sellerId;
 
-    public int getId() {
-        return id;
+    public Purchase(int clientId, int sellerId, double amount){
+
+        setClientId(clientId);
+        setSellerId(sellerId);
+        setAmount(amount);
+
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(int clientId) {
+        this.clientId = clientId;
+    }
+
+    public int getSellerId() {
+        return sellerId;
+    }
+
+    public void setSellerId(int sellerId) {
+        this.sellerId = sellerId;
     }
 
     public double getAmount() {

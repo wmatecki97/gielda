@@ -37,6 +37,8 @@ public class Main extends Application {
         MenuFunctionality.addNewCurrency();
         MenuFunctionality.addNewCurrency();
         MenuFunctionality.addNewCurrency();
+        MenuFunctionality.addNewCompany();
+        MenuFunctionality.addNewCompany();
         MenuFunctionality.addNewExchange();
         MenuFunctionality.addNewInvestor();
         MenuFunctionality.addNewCompany();

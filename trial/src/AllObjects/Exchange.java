@@ -62,6 +62,11 @@ public class Exchange implements AllInstancess {
     public synchronized void buy (double price, Client client){
 
         Goods toBuy = (Goods) goodsList.get(AdditionalFunctions.getRandom(0,goodsList.size()-1));
+
+        AllPurchases purchasesList = MenuFunctionality.getPurchasesList();
+        Purchase purchase = new Purchase(client.getId(), toBuy.getId(), price);
+
+        AllPurchases.addToList(purchase);
         toBuy.buy(price, client, markup);
 
     }
@@ -158,4 +163,5 @@ public class Exchange implements AllInstancess {
         updateGoods();
 
     }
+
 }

@@ -26,6 +26,7 @@ public class MenuFunctionality {
     static List<AllInstancess> exchangeList;
     static List<AllInstancess> rawMaterialList;
     static List<AllInstancess> shareIndexList;
+    static AllPurchases purchasesList;
 
 
     public static void initialize(){
@@ -36,7 +37,13 @@ public class MenuFunctionality {
         exchangeList = new ArrayList<>();
         rawMaterialList= new ArrayList<>();
         shareIndexList = new ArrayList<>();
+        purchasesList = new AllPurchases();
     }
+
+    public static AllPurchases getPurchasesList() {
+        return purchasesList;
+    }
+
     private static String getInput(){
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -173,11 +180,6 @@ public class MenuFunctionality {
     public static void addNewCurrency(){Currency c = new Currency(); currencyList.add(c); addGoddToList(c);}
     public static void addNewExchange(){exchangeList.add(new Exchange());}
     public static void addNewRawMaterial(){rawMaterialList.add(new RawMaterials());}
-
-
-
-
-
     private static void addItem(List<AllInstancess> inputList, AllInstancess temp){
 
         String answer = getInput();
@@ -258,10 +260,7 @@ public class MenuFunctionality {
     }
 
     public static AllInstancess getRandomGoods(){
-
-        List<AllInstancess> list = getRandomListOfGoods();
-        return list.get(AdditionalFunctions.getRandom(0, list.size()-1));
-
+        return companyList.get(AdditionalFunctions.getRandom(0, companyList.size()-1));
     }
 
     public static Exchange getRandomExchange(){
@@ -272,13 +271,8 @@ public class MenuFunctionality {
 
     private static List<AllInstancess> getRandomListOfGoods() {
 
-        int rand;
-        while(true){
-            rand = AdditionalFunctions.getRandom(0,2);
-            if(rand==0 && companyList.size()>0)return companyList;
-            if(rand==1 && currencyList.size()>0)return currencyList;
-            if(rand==2 && rawMaterialList.size()>0)return rawMaterialList;
-        }
+       return companyList;
+
 
     }
 
