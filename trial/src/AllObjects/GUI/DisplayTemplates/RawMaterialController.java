@@ -1,7 +1,6 @@
 package AllObjects.GUI.DisplayTemplates;
 
-import AllObjects.Investor;
-import functionalClasses.AllInstancess;
+import AllObjects.Clients.Investor;
 import functionalClasses.MenuFunctionality;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -9,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.List;
@@ -18,8 +18,13 @@ public class RawMaterialController implements Initializable {
     @FXML
     private TableView<Investor> tableView;
 
+	@FXML
+	private AnchorPane pane;
+
 
     public void initialize(URL location, ResourceBundle resources) {
+
+        tableView.prefWidthProperty().bind(pane.widthProperty());
 
         TableColumn nameColumn = new TableColumn("Imię");
         nameColumn.setCellValueFactory(new PropertyValueFactory("firstName"));
@@ -39,7 +44,7 @@ public class RawMaterialController implements Initializable {
 
         tableView.getColumns().addAll(nameColumn, surnameColumn, budgetColumn, peselColumn);
         ObservableList<Investor> data = tableView.getItems();
-        List<AllInstancess> list = MenuFunctionality.getInvestorList();
+        List<Investor> list = MenuFunctionality.getInvestorList();
         for (int i = -0; i < list.size(); i++) {
             data.add((Investor) list.get(i));
         }

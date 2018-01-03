@@ -1,6 +1,8 @@
 package AllObjects.Market;
 
 import AllObjects.Goods.Currency;
+import AllObjects.Goods.Goods;
+import AllObjects.Goods.RawMaterials;
 import functionalClasses.AdditionalFunctions;
 import functionalClasses.AllInstancess;
 import functionalClasses.MenuFunctionality;
@@ -12,12 +14,25 @@ public class CurrencyMarket extends Market {
 
     public CurrencyMarket(){
 
-        List<AllInstancess> currencyList = MenuFunctionality.getCurrencyList();
+        List<Goods> currencyList = MenuFunctionality.getCurrencyList();
         goodsList = new ArrayList<>();
 
-        for(AllInstancess currency: currencyList){
-            goodsList.add(currency);
+        for(Goods currency: currencyList){
+            goodsList.add((Currency)currency);
         }
     }
 
+    /*
+    public synchronized List<Currency> getGoodsList() {
+
+        List<Currency> result = new ArrayList<>();
+        for(Goods good: goodsList) {
+            result.add((Currency)good);
+        }
+        return result;
+    }
+*/
+    public synchronized void add(Currency currency){
+        goodsList.add(currency);
+    }
 }

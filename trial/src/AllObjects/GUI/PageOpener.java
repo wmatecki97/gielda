@@ -73,6 +73,10 @@ public class PageOpener {
         open("DisplayTemplates/InvestorView.fxml", "Inwestorzy", 400, 500, false);
     }
 
+    public static void investmentFundPage(){
+        open("DisplayTemplates/InvestmentFundView.fxml", "Fundusze inwestycyjne", 400, 300, false);
+    }
+
     public static void companyPage(){
         open("./DisplayTemplates/CompanyView.fxml", "Spółki", 400, 1300, false);
     }

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AllObjects.GUI.DisplayTemplates.InvestorController">
+<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AllObjects.GUI.DisplayTemplates.InvestorController" fx:id="pane">
 
 
     <TableView fx:id="tableView" prefHeight="400.0" prefWidth="500.0" GridPane.columnIndex="0" GridPane.rowIndex="1">

@@ -1,23 +1,24 @@
-package AllObjects;
+package AllObjects.Clients;
 
-import AllObjects.Goods.Goods;
+import AllObjects.Purchases.ParticipationUnit;
 import functionalClasses.AdditionalFunctions;
 import functionalClasses.AllInstancess;
 import functionalClasses.DataGenerator.DataGenerator;
+import functionalClasses.MenuFunctionality;
 
-import java.util.concurrent.Semaphore;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.Thread.sleep;
 
 public class Investor extends Client implements AllInstancess, Runnable{
     private String PESEL;
+    private List<ParticipationUnit> purchaseList;
 
     public Investor(){
         PESEL = DataGenerator.getPESEL();
-        budget = AdditionalFunctions.getRandom(5000,10000000);
-        Thread t = new Thread(this);
-        t.start();
-
+        budget = AdditionalFunctions.getRandom(5000,1000000);
+        purchaseList = new ArrayList<>();
     }
 
     @Override
@@ -29,12 +30,26 @@ public class Investor extends Client implements AllInstancess, Runnable{
             }
             catch (Exception e){}
             buy();
-            if(AdditionalFunctions.getRandom(0,10)==1) increaseBudget();
+            if(AdditionalFunctions.getRandom(0,10)==0) increaseBudget();
         }
 
     }
 
+    @Override
+    protected synchronized void buy(){
 
+        if(budget>1){
+            double price = AdditionalFunctions.getRandom(1,(int)budget,2);
+            int index =AdditionalFunctions.getRandom(0,MenuFunctionality.getInvestmentFundList().size()-1);
+            InvestmentFund fund = MenuFunctionality.getInvestmentFundList().get(index);
+            price = price-price/fund.getCurrentValue();
+            ParticipationUnit unit = new ParticipationUnit(fund.getId(),price/fund.getCurrentValue());
+            fund.buyParticipationUnits(price);
+            purchaseList.add(unit);
+            budget-=price;
+
+        }
+    }
 
     public synchronized void display(){
         super.display();
@@ -62,8 +77,9 @@ public class Investor extends Client implements AllInstancess, Runnable{
         return output;
     }
 
-    private void increaseBudget(){
-        budget+=AdditionalFunctions.getRandom(1,100);
+    private synchronized void increaseBudget(){
+        if(budget<2000000000)
+        budget+=AdditionalFunctions.getRandom(1,1000000);
     }
 
     public synchronized String getPESEL() {

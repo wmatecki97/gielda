@@ -1,16 +1,14 @@
 package AllObjects.GUI.DisplayTemplates;
 
 import AllObjects.Goods.Company;
-import AllObjects.Investor;
-import functionalClasses.AllInstancess;
 import functionalClasses.MenuFunctionality;
-import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.List;
@@ -21,10 +19,14 @@ public class CompanyController implements Initializable {
     @FXML
     private TableView<Company> tableView;
 
+	@FXML
+	private AnchorPane pane;
+
     //@FXML private TableColumn<Investor, String>;
 
     public void initialize(URL location, ResourceBundle resources) {
 
+        tableView.prefWidthProperty().bind(pane.widthProperty());
 
         TableColumn nameColumn = new TableColumn("Nazwa");
         nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
@@ -54,9 +56,9 @@ public class CompanyController implements Initializable {
 
         tableView.getColumns().addAll(nameColumn, dateColumn, minColumn, numberOfActionColumn, openingColumn, valueColumn, profitColumn, incomeColumn, ownCapitalColumn, factoryCapitalColumn, volumeColumn, turnoverColumn);
         ObservableList<Company> data = tableView.getItems();
-        List<AllInstancess> list = MenuFunctionality.getCompanyList();
-        for (int i = -0; i < list.size(); i++) {
-            data.add((Company) list.get(i));
+        List<Company> list = MenuFunctionality.getCompanyList();
+        for (Company company:list) {
+            data.add(company);
         }
 
 

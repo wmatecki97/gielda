@@ -14,8 +14,8 @@ public class Currency extends Goods {
 
 
     public Currency(){
-        name = DataGenerator.getCurrency();
 
+        name = DataGenerator.getCurrency();
         int numberOfCountries = AdditionalFunctions.getRandom(1,5);
         countries = DataGenerator.getCountries(numberOfCountries);
         countriesList = AdditionalFunctions.ListToString(countries);
@@ -72,6 +72,10 @@ public class Currency extends Goods {
 
     public synchronized void setName(String name) {
         this.name = name;
+    }
+
+    public synchronized String getCountriesList() {
+        return countriesList;
     }
 
     private String countriesList;

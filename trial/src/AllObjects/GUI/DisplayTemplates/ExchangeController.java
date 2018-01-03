@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.List;
@@ -19,8 +20,13 @@ public class ExchangeController implements Initializable {
     @FXML
     private TableView<Exchange> tableView;
 
+	@FXML
+	private AnchorPane pane;
+
 
     public void initialize(URL location, ResourceBundle resources) {
+
+        tableView.prefWidthProperty().bind(pane.widthProperty());
 
         TableColumn nameColumn = new TableColumn("Nazwa");
         nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
@@ -34,7 +40,7 @@ public class ExchangeController implements Initializable {
         adressColumn.setCellValueFactory(new PropertyValueFactory("adress"));
         TableColumn markupColumn = new TableColumn("Marża");
         markupColumn.setCellValueFactory(new PropertyValueFactory("markup"));
-        TableColumn goodsColumn = new TableColumn("Lista dóbr możliwyych do kupienia");
+        TableColumn goodsColumn = new TableColumn("Lista akcji możliwyych do kupienia");
         goodsColumn.setCellValueFactory(new PropertyValueFactory("goods"));
 
 

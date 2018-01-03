@@ -1,20 +1,39 @@
-package AllObjects;
+package AllObjects.Clients;
 
+import AllObjects.Purchases.AllPurchases;
+import AllObjects.Purchases.Purchase;
 import functionalClasses.AdditionalFunctions;
 import functionalClasses.AllInstancess;
 import functionalClasses.DataGenerator.DataGenerator;
+import functionalClasses.MenuFunctionality;
+
+import java.util.List;
 
 import static java.lang.Thread.sleep;
 
 public class InvestmentFund extends Client implements AllInstancess, Runnable{
 
     private String name;
-    private Double Value;
+    private double currentValue;
+    private int unitsSold;
 
     public InvestmentFund(){
         name = DataGenerator.getName();
+        unitsSold=0;
+        currentValue=AdditionalFunctions.getRandom(1,10000);
         Thread t = new Thread(this);
         t.start();
+    }
+
+    public synchronized void buyParticipationUnits(double price){
+
+        unitsSold+=(int)price/currentValue;
+        budget=budget+price;
+
+    }
+
+    public void setCurrentValue(double currentValue) {
+        this.currentValue = currentValue;
     }
 
     @Override
@@ -26,9 +45,19 @@ public class InvestmentFund extends Client implements AllInstancess, Runnable{
                 sleep(5000);
             }
             catch (Exception e){}
-
-
             buy();
+            List<Purchase> list = AllPurchases.getBoughtProducts(getId());
+            if(list.size()>0){
+                double value=0.0;
+                for(Purchase purchase: list){
+
+                    value+=MenuFunctionality.getValueOfGood(purchase.getSellerId());
+
+
+                }
+                value=value/unitsSold;
+                setCurrentValue(value);
+            }
         }
 
     }
@@ -66,5 +95,7 @@ public class InvestmentFund extends Client implements AllInstancess, Runnable{
         this.name = name;
     }
 
-
+    public double getCurrentValue() {
+        return currentValue;
+    }
 }

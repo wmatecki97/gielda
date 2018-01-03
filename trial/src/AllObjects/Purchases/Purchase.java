@@ -1,4 +1,4 @@
-package AllObjects;
+package AllObjects.Purchases;
 
 public class Purchase {
 
@@ -14,27 +14,27 @@ public class Purchase {
 
     }
 
-    public int getClientId() {
+    public synchronized int getClientId() {
         return clientId;
     }
 
-    public void setClientId(int clientId) {
+    public synchronized void setClientId(int clientId) {
         this.clientId = clientId;
     }
 
-    public int getSellerId() {
+    public synchronized int getSellerId() {
         return sellerId;
     }
 
-    public void setSellerId(int sellerId) {
+    public synchronized void setSellerId(int sellerId) {
         this.sellerId = sellerId;
     }
 
-    public double getAmount() {
+    public synchronized double getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public synchronized void setAmount(double amount) {
         this.amount = amount;
     }
 }

@@ -9,9 +9,10 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="AllObjects.GUI.DisplayTemplates.InvestmentFundController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="300.0"
+            fx:id="pane">
 
-    <TableView fx:id="tableView" prefHeight="400.0" prefWidth="500.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+    <TableView fx:id="tableView" prefHeight="400.0" prefWidth="300.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
 
     </TableView>
 

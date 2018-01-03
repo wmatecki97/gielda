@@ -28,45 +28,41 @@ public class Company extends Goods implements Runnable{
     private double turnover;
     private double lastActionsLeftValue;
 
-    public int getNumberOfActions() {
+    public synchronized int getNumberOfActions() {
         return numberOfActions;
     }
 
-    public double getOpeningValue() {
+    public synchronized double getOpeningValue() {
         return openingValue;
     }
 
-    public void setNumberOfActions(int numberOfActions) {
-        this.numberOfActions = numberOfActions;
-    }
-
-    public void setActionsLeft(int actionsLeft) {
+    public synchronized void setActionsLeft(int actionsLeft) {
         this.actionsLeft = actionsLeft;
     }
 
-    public void setOpeningValue(double openingValue) {
+    public synchronized void setOpeningValue(double openingValue) {
         this.openingValue = openingValue;
     }
 
-    public double getLastActionsLeftValue() {
+    public synchronized double getLastActionsLeftValue() {
         return lastActionsLeftValue;
     }
 
-    public void setLastActionsLeftValue(double lastActionsLeftValue) {
+    public synchronized void setLastActionsLeftValue(double lastActionsLeftValue) {
         this.lastActionsLeftValue = lastActionsLeftValue;
     }
 
-    public void setValueList(List<Double> valueList) {
+    public synchronized void setValueList(List<Double> valueList) {
         this.valueList = valueList;
     }
 
-    public List<Double> getValueList() {
+    public synchronized List<Double> getValueList() {
         return valueList;
     }
 
     private List<Double> valueList;
 
-    private void addToValueList(Double value){
+    private synchronized void addToValueList(Double value){
         valueList.add(value);
     }
 
@@ -128,23 +124,23 @@ public class Company extends Goods implements Runnable{
 
 
     @Override
-    public boolean checkIfIsEnough (double budget){
+    public synchronized boolean checkIfIsEnough (double budget){
 
         if(actionsLeft<(int)(budget/value))
             return false;
         return true;
     }
 
-    public int getActionsLeft() {
+    public synchronized int getActionsLeft() {
         return actionsLeft;
     }
 
-    public void display() {
+    public synchronized void display() {
         System.out.println("nazwa: " + name + " data: " + AdditionalFunctions.dateToString(date) + " kurs wymiany: " + super.value + " minimalna wartosc: " + min + " liczba akcji: " + numberOfActions + " zysk: " +
                 profit + " przychd: " + income + " kapita wasny: " + individualCapital + " kapita zakadowy: " + factoryCapital + " wolumen: " + volume + " obroty: " + turnover);
     }
 
-    public String getOutputString(){
+    public synchronized String getOutputString(){
         String output = name + " "  + AdditionalFunctions.dateToString(date) + " "  + super.value + " "  + min  + " "  + numberOfActions + " "  +profit + " "  +income + " "  +
                 individualCapital + " "  +factoryCapital + " "  +volume + " "  +turnover;
         return output;

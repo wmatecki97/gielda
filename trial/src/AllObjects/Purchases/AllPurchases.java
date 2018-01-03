@@ -1,4 +1,4 @@
-package AllObjects;
+package AllObjects.Purchases;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class AllPurchases {
         }
     }
 
-    public static void deleteFromList(int clientId, int sellerId){
+    public synchronized static void deleteFromList(int clientId, int sellerId){
 
         for(int i=0; i<list.size(); i++){
 
@@ -27,12 +27,26 @@ public class AllPurchases {
         }
     }
 
-    public static Purchase findOnList(Purchase purchase){
+    public synchronized static Purchase findOnList(Purchase purchase){
 
         for (Purchase purch: list) {
             if(purch.getSellerId()==purchase.getSellerId() && purch.getClientId() == purchase.getSellerId())return purch;
         }
         return null;
+
+    }
+
+    public synchronized static List<Purchase> getBoughtProducts(int clientId){
+
+        List<Purchase> result = new ArrayList<>();
+
+        for(Purchase purchase: list){
+
+            if(purchase.getClientId()==clientId)result.add(purchase);
+
+        }
+
+        return result;
 
     }
 

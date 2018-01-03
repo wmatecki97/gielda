@@ -1,6 +1,7 @@
 package AllObjects.Market;
 
 import AllObjects.Goods.Currency;
+import AllObjects.Goods.Goods;
 import AllObjects.Goods.RawMaterials;
 import functionalClasses.AdditionalFunctions;
 import functionalClasses.AllInstancess;
@@ -14,12 +15,26 @@ public class RawMaterialsMarket extends Market {
 
     public RawMaterialsMarket(){
 
-        List<AllInstancess> rawMaterialList = MenuFunctionality.getRawMaterialList();
-        goodsList = new ArrayList<>();
+        List<Goods> rawMaterialList = MenuFunctionality.getRawMaterialList();
+        goodsList = new ArrayList<Goods>();
 
-        for(AllInstancess material: rawMaterialList){
+        for(Goods material: rawMaterialList){
+
             goodsList.add(material);
         }
+    }
+/*
+    public synchronized List<RawMaterials> getGoodsList() {
+
+        List<RawMaterials> result = new ArrayList<>();
+        for(Goods good: goodsList) {
+            result.add((RawMaterials) good);
+        }
+        return result;
+    }
+*/
+    public synchronized void add(RawMaterials rawMaterial){
+        goodsList.add(rawMaterial);
     }
 
 }

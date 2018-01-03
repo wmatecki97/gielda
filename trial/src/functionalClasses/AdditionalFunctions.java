@@ -1,6 +1,6 @@
 package functionalClasses;
 
-import AllObjects.Client;
+import AllObjects.Clients.Client;
 import AllObjects.Market.Exchange;
 
 import java.util.ArrayList;
@@ -96,11 +96,17 @@ public class AdditionalFunctions {
 
     public static int getRandom(int min, int max){
 
+        if(min<0 || max<0)
+            return 0;
         return rand.nextInt(max-min+1)+min;
 
     }
 
     public static double getRandom(int min, int max, int precission){
+
+        if(min<0||max<0)
+            return 0.0;
+
         if(precission>9)precission=9;
         int exponent = (int)pow(10.0, (double)precission);
         return getRandom(min*exponent, max*exponent)/exponent;

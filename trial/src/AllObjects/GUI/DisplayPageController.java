@@ -19,6 +19,9 @@ public class DisplayPageController {
     }
 
     public void displayInvestmentFund(ActionEvent actionEvent) {
+
+        PageOpener.investmentFundPage();
+
     }
 
     public void displayCompany(ActionEvent actionEvent) {

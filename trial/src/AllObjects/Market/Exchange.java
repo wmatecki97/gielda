@@ -1,9 +1,8 @@
 package AllObjects.Market;
 
-import AllObjects.AllPurchases;
-import AllObjects.Client;
+import AllObjects.Clients.Client;
+import AllObjects.Goods.Company;
 import AllObjects.Goods.Goods;
-import AllObjects.Purchase;
 import functionalClasses.AdditionalFunctions;
 import functionalClasses.AllInstancess;
 import functionalClasses.DataGenerator.DataGenerator;
@@ -27,17 +26,18 @@ public class Exchange extends Market implements AllInstancess {
         goodsList =new ArrayList<>();
         name = DataGenerator.getExchangeName();
         country = DataGenerator.getCountry();
-        List<AllInstancess> curList = MenuFunctionality.getCurrencyList();
-        Goods good = (Goods)curList.get(AdditionalFunctions.getRandom(0,curList.size()-1));
+        List<Goods> curList = MenuFunctionality.getCurrencyList();
+        Goods good = curList.get(AdditionalFunctions.getRandom(0,curList.size()-1));
         currency = good.getName();
         city = DataGenerator.getCity();
         adress = DataGenerator.getStreet();
-        markup = (double) AdditionalFunctions.getRandom(1,300)/1000;
+
 
         //Adding companys to the list
-        List<AllInstancess> companyList = MenuFunctionality.getCompanyList();
+        List<Company> companyList = MenuFunctionality.getCompanyList();
         goodsList = new ArrayList<>();
-        for(AllInstancess companny: companyList){
+
+        for(Company companny: companyList){
             if(goodsList.size()==0 || AdditionalFunctions.getRandom(0,5)==0){
                 goodsList.add(companny);
             }
@@ -60,16 +60,29 @@ public class Exchange extends Market implements AllInstancess {
 
     }
 
-    public synchronized void buy (double price, Client client){
+    @Override
+    public synchronized void buy (Client client, double cost){
 
-        Goods toBuy = (Goods) goodsList.get(AdditionalFunctions.getRandom(0,goodsList.size()-1));
+        Goods subject = getRandomGood();
+        if(subject.checkIfIsEnough(cost-cost*markup)==false){
+            Company temp =(Company)subject;
+            double amounnt = temp.getActionsLeft();
+            cost = amounnt*subject.getValue()/(1-markup);
+        }
+
+
+        super.buy(client,subject, cost);
+        
+        
+        
+       /* Goods toBuy = (Goods) goodsList.get(AdditionalFunctions.getRandom(0,goodsList.size()-1));
 
         AllPurchases purchasesList = MenuFunctionality.getPurchasesList();
-        Purchase purchase = new Purchase(client.getId(), toBuy.getId(), price);
+        Purchase purchase = new Purchase(client.getId(), toBuy.getId(), cost);
 
         AllPurchases.addToList(purchase);
-        toBuy.buy(price, client, markup);
-
+        toBuy.buy(cost, client, markup);
+*/
     }
 
     public synchronized String getOutputString(){

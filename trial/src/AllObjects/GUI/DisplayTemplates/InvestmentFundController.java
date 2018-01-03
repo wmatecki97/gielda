@@ -1,7 +1,7 @@
 package AllObjects.GUI.DisplayTemplates;
 
-import AllObjects.Investor;
-import functionalClasses.AllInstancess;
+import AllObjects.Clients.InvestmentFund;
+import AllObjects.Clients.Investor;
 import functionalClasses.MenuFunctionality;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.List;
@@ -17,32 +18,38 @@ import java.util.ResourceBundle;
 public class InvestmentFundController implements Initializable {
 
     @FXML
-    private TableView<Investor> tableView;
+    private TableView<InvestmentFund> tableView;
 
+    @FXML
+    private AnchorPane pane;
 
     public void initialize(URL location, ResourceBundle resources) {
 
-        TableColumn nameColumn = new TableColumn("Imię");
-        nameColumn.setCellValueFactory(new PropertyValueFactory("firstName"));
+
+
+        tableView.prefWidthProperty().bind(pane.widthProperty());
+
+
+
+        TableColumn firstNameColumn = new TableColumn("Imię");
+        firstNameColumn.setCellValueFactory(new PropertyValueFactory("firstName"));
         TableColumn surnameColumn = new TableColumn("Nazwisko");
         surnameColumn.setCellValueFactory(new PropertyValueFactory("surname"));
-        TableColumn budgetColumn = new TableColumn("budzet");
-        budgetColumn.setCellValueFactory(new PropertyValueFactory("budget"));
-        TableColumn peselColumn = new TableColumn("PESEL");
-        peselColumn.setCellValueFactory(new PropertyValueFactory("PESEL"));
+        TableColumn nameColumn = new TableColumn("Nazwa");
+        nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
+        TableColumn valueColumn = new TableColumn("Wartość jednostki uczestnictwa");
+        valueColumn.setCellValueFactory(new PropertyValueFactory("currentValue"));
 
-        nameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(4));
-        surnameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(4));
-        budgetColumn.prefWidthProperty().bind(tableView.widthProperty().divide(4));
-        peselColumn.prefWidthProperty().bind(tableView.widthProperty().divide(4));
+        firstNameColumn.prefWidthProperty().bind(pane.widthProperty().divide(4));
+        surnameColumn.prefWidthProperty().bind(pane.widthProperty().divide(4));
+        nameColumn.prefWidthProperty().bind(pane.widthProperty().divide(4));
+        valueColumn.prefWidthProperty().bind(pane.widthProperty().divide(4));
 
-
-        tableView.getColumns().addAll(nameColumn, surnameColumn, budgetColumn, peselColumn);
-        ObservableList<Investor> data = tableView.getItems();
-        List<AllInstancess> list = MenuFunctionality.getInvestorList();
-        for (int i = -0; i < list.size(); i++) {
-            data.add((Investor) list.get(i));
-        }
+        tableView.getColumns().addAll(firstNameColumn, surnameColumn, nameColumn, valueColumn);
+        ObservableList<InvestmentFund> data = tableView.getItems();
+        List<InvestmentFund> list = MenuFunctionality.getInvestmentFundList();
+        for(InvestmentFund investmentFund: list)
+            data.add(investmentFund);
 
     }
 }

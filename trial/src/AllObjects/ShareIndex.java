@@ -7,12 +7,12 @@ public class ShareIndex implements AllInstancess {
     private int index;
     private double value;
 
-    public String getOutputString(){
+    public synchronized String getOutputString(){
         String output = index + " " + value;
         return output;
     };
 
-    public ShareIndex setValues(String inputString){
+    public synchronized ShareIndex setValues(String inputString){
 
         String[] strArr = AdditionalFunctions.split(inputString);
         ShareIndex output = new ShareIndex();
@@ -23,23 +23,23 @@ public class ShareIndex implements AllInstancess {
         return output;
     };
 
-    public void display(){
+    public synchronized void display(){
         System.out.println("index: " + index + " wartosc: " + value);
     }
 
-    public int getIndex() {
+    public synchronized int getIndex() {
         return index;
     }
 
-    public void setIndex(int index) {
+    public synchronized void setIndex(int index) {
         this.index = index;
     }
 
-    public double getValue() {
+    public synchronized double getValue() {
         return value;
     }
 
-    public void setValue(double value) {
+    public synchronized void setValue(double value) {
         this.value = value;
     }
 }
