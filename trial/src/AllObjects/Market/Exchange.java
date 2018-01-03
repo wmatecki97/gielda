@@ -1,6 +1,9 @@
-package AllObjects;
+package AllObjects.Market;
 
+import AllObjects.AllPurchases;
+import AllObjects.Client;
 import AllObjects.Goods.Goods;
+import AllObjects.Purchase;
 import functionalClasses.AdditionalFunctions;
 import functionalClasses.AllInstancess;
 import functionalClasses.DataGenerator.DataGenerator;
@@ -9,15 +12,14 @@ import functionalClasses.MenuFunctionality;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Exchange implements AllInstancess {
+public class Exchange extends Market implements AllInstancess {
     private String name;
     private String country;
     private String currency;
     private String city;
     private String adress;
-    private double markup;
     private List<String> indexList;
-    private List<AllInstancess> goodsList;
+
 
     public Exchange(){
 
@@ -25,24 +27,23 @@ public class Exchange implements AllInstancess {
         goodsList =new ArrayList<>();
         name = DataGenerator.getExchangeName();
         country = DataGenerator.getCountry();
-        currency = DataGenerator.getCurrency();
+        List<AllInstancess> curList = MenuFunctionality.getCurrencyList();
+        Goods good = (Goods)curList.get(AdditionalFunctions.getRandom(0,curList.size()-1));
+        currency = good.getName();
         city = DataGenerator.getCity();
         adress = DataGenerator.getStreet();
         markup = (double) AdditionalFunctions.getRandom(1,300)/1000;
 
-
-        for(int i=0; i<AdditionalFunctions.getRandom(5,20); i++){
-
-            AllInstancess good = AdditionalFunctions.getRandomGood();
-            if(goodsList.size()==0)
-                goodsList.add(good);
-            else if(!goodsList.contains(good)){
-                goodsList.add(good);
-           }
-
+        //Adding companys to the list
+        List<AllInstancess> companyList = MenuFunctionality.getCompanyList();
+        goodsList = new ArrayList<>();
+        for(AllInstancess companny: companyList){
+            if(goodsList.size()==0 || AdditionalFunctions.getRandom(0,5)==0){
+                goodsList.add(companny);
+            }
         }
-
         updateGoods();
+
 
 
     }

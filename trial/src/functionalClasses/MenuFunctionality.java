@@ -5,10 +5,10 @@ import AllObjects.Goods.Company;
 import AllObjects.Goods.Currency;
 import AllObjects.Goods.Goods;
 import AllObjects.Goods.RawMaterials;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import AllObjects.Market.CurrencyMarket;
+import AllObjects.Market.Exchange;
+import AllObjects.Market.Market;
+import AllObjects.Market.RawMaterialsMarket;
 
 
 import java.io.BufferedReader;
@@ -27,6 +27,8 @@ public class MenuFunctionality {
     static List<AllInstancess> rawMaterialList;
     static List<AllInstancess> shareIndexList;
     static AllPurchases purchasesList;
+    static CurrencyMarket currencyMarket;
+    static RawMaterialsMarket rawMaterialsMarket;
 
 
     public static void initialize(){
@@ -38,6 +40,8 @@ public class MenuFunctionality {
         rawMaterialList= new ArrayList<>();
         shareIndexList = new ArrayList<>();
         purchasesList = new AllPurchases();
+        currencyMarket = new CurrencyMarket();
+        rawMaterialsMarket = new RawMaterialsMarket();
     }
 
     public static AllPurchases getPurchasesList() {
@@ -270,10 +274,7 @@ public class MenuFunctionality {
     }
 
     private static List<AllInstancess> getRandomListOfGoods() {
-
        return companyList;
-
-
     }
 
     public static List<AllInstancess> getInvestorList() {
@@ -302,5 +303,15 @@ public class MenuFunctionality {
 
     public static List<AllInstancess> getShareIndexList() {
         return shareIndexList;
+    }
+
+    public static Market getrandomMarket() {
+
+        int rand = AdditionalFunctions.getRandom(0,3);
+        if(rand==0)return (Market)currencyMarket;
+        if(rand==1)return (Market)rawMaterialsMarket;
+        if(rand==2)return (Market)exchangeList.get(AdditionalFunctions.getRandom(0,exchangeList.size()-1));
+
+        return null;
     }
 }

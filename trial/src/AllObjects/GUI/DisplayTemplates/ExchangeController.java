@@ -1,7 +1,6 @@
 package AllObjects.GUI.DisplayTemplates;
 
-import AllObjects.Exchange;
-import AllObjects.Investor;
+import AllObjects.Market.Exchange;
 import functionalClasses.AllInstancess;
 import functionalClasses.MenuFunctionality;
 import javafx.collections.ObservableList;

@@ -1,9 +1,7 @@
 package functionalClasses;
 
 import AllObjects.Client;
-import AllObjects.Exchange;
-import AllObjects.Goods.Goods;
-import functionalClasses.AllInstancess;
+import AllObjects.Market.Exchange;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,9 +17,9 @@ public class AdditionalFunctions {
     public static String ListToString(List<String> inputList){
         String output="";
         for (String item : inputList) {
-            output+=item+" ";
+            output+=item+", ";
         }
-        output=output.substring(0,output.length()-1);
+        output=output.substring(0,output.length()-2);
         return output;
     }
 
