@@ -1,40 +1,45 @@
 package AllObjects.Clients;
 
-import AllObjects.Purchases.AllPurchases;
-import AllObjects.Purchases.Purchase;
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.AllInstancess;
-import functionalClasses.DataGenerator.DataGenerator;
-import functionalClasses.MenuFunctionality;
+import AllObjects.Goods.Goods;
+import AllObjects.functionalClasses.Purchase;
+import AllObjects.functionalClasses.AdditionalFunctions;
+import AllObjects.functionalClasses.AllInstancess;
+import AllObjects.functionalClasses.DataGenerator.DataGenerator;
+import AllObjects.functionalClasses.HasName;
+import AllObjects.functionalClasses.MenuFunctionality;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Thread.sleep;
 
-public class InvestmentFund extends Client implements AllInstancess, Runnable{
+public class InvestmentFund extends Client implements AllInstancess, HasName, Runnable{
 
     private String name;
     private double currentValue;
     private int unitsSold;
 
+
     public InvestmentFund(){
         name = DataGenerator.getName();
-        unitsSold=0;
+        unitsSold=1;
         currentValue=AdditionalFunctions.getRandom(1,10000);
-        Thread t = new Thread(this);
-        t.start();
+        purchaseList = new ArrayList<>();
     }
 
-    public synchronized void buyParticipationUnits(double price){
+    public synchronized Purchase buyPurchases(double price){
 
-        unitsSold+=(int)price/currentValue;
+        List<Double> pList = new ArrayList<>();
+        pList.add(price); pList.add(getCurrentValue());
+        double temp = price%getCurrentValue();pList.add(temp);
+        price = price-temp;pList.add(price);pList.add(getCurrentValue());
+        Purchase unit = new Purchase(getId(),price/getCurrentValue());
+        unitsSold+=(int) price/currentValue;
         budget=budget+price;
+        return unit;
 
     }
 
-    public void setCurrentValue(double currentValue) {
-        this.currentValue = currentValue;
-    }
 
     @Override
     public void run() {
@@ -46,25 +51,49 @@ public class InvestmentFund extends Client implements AllInstancess, Runnable{
             }
             catch (Exception e){}
             buy();
-            List<Purchase> list = AllPurchases.getBoughtProducts(getId());
-            if(list.size()>0){
-                double value=0.0;
-                for(Purchase purchase: list){
-
-                    value+=MenuFunctionality.getValueOfGood(purchase.getSellerId());
-
-
-                }
-                value=value/unitsSold;
-                setCurrentValue(value);
-            }
+            work();
         }
 
+    }
+
+
+    public synchronized void addToPurchasesList(Purchase purchase){
+        purchaseList.add(purchase);
+    }
+
+    private synchronized void work(){
+
+        if(purchaseList.size()>0){
+            double value=0.0;
+            for(Purchase purchase: purchaseList){
+                Goods good = (Goods)MenuFunctionality.getGood(purchase.getSubjectId());
+                value+=good.getValue()*purchase.getAmount();
+            }
+            value=(value+budget)/unitsSold;
+            setCurrentValue(value);
+        }
+    }
+
+    public List<Purchase> getPurchaseList() {
+        return purchaseList;
+    }
+
+    @Override
+    protected synchronized void buy(){
+
+        if(budget>=1)
+            MenuFunctionality.getrandomMarket().buy(this ,AdditionalFunctions.getRandom(1,(int)budget,2) );
     }
 
     public synchronized void display(){
         super.display();
         System.out.print("nazwa: " + name +"\n");
+    }
+
+    public void setCurrentValue(double currentValue) {
+        if(currentValue<0)
+            System.out.println("asf");
+        this.currentValue = currentValue;
     }
 
     public synchronized String getOutputString(){

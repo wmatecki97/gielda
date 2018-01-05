@@ -1,10 +1,9 @@
 package AllObjects.Market;
 
-import AllObjects.Clients.Client;
+import AllObjects.Clients.InvestmentFund;
 import AllObjects.Goods.Goods;
-import AllObjects.Purchases.Purchase;
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.MenuFunctionality;
+import AllObjects.functionalClasses.Purchase;
+import AllObjects.functionalClasses.AdditionalFunctions;
 
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class Market {
         markup = (double) AdditionalFunctions.getRandom(1,300)/1000;
     }
 
-    public synchronized void buy(Client client, double cost){
+    public synchronized void buy(InvestmentFund client, double cost){
         Goods subject = getRandomGood();
         buy(client, subject, cost);
     }
@@ -26,20 +25,19 @@ public class Market {
         return goodsList;
     }
 
-    protected synchronized void buy(Client client, Goods subject, double cost){//can not be synchronised
+    protected synchronized void buy(InvestmentFund client, Goods subject, double cost){//can not be synchronised
 
         double markupValue = cost*markup;
         cost = cost-markupValue;
-        Purchase purchase = new Purchase(client.getId(), subject.getId(), cost/subject.getValue());
-
+        Purchase purchase = new Purchase(subject.getId(), cost/subject.getValue());
 
         double budget = client.getBudget();
 
         client.setBudget(budget-cost-markupValue);
 
-        MenuFunctionality.getPurchasesList().addToList(purchase);
+        client.addToPurchasesList(purchase);
 
-        System.out.println(purchase.getClientId() + " "+ purchase.getSellerId());
+        //System.out.println(purchase.getClientId() + " "+ purchase.getSubjectId());
 
     }
 

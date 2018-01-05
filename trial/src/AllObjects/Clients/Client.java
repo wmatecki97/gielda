@@ -1,16 +1,17 @@
 package AllObjects.Clients;
 
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.DataGenerator.DataGenerator;
-import functionalClasses.MenuFunctionality;
+import AllObjects.functionalClasses.AdditionalFunctions;
+import AllObjects.functionalClasses.DataGenerator.DataGenerator;
+import AllObjects.functionalClasses.Purchase;
+
+import java.util.List;
 
 public class Client {
     protected String firstName;
     protected String surname;
     protected int id;
     protected double budget;
-
-
+    protected List<Purchase> purchaseList;
 
     Client(){
         setFirstName(DataGenerator.getFirstName());
@@ -18,11 +19,16 @@ public class Client {
         id = AdditionalFunctions.getUniqueIndex();
     }
 
-    protected void buy(){
-
-        if(budget>=1)
-            MenuFunctionality.getrandomMarket().buy(this ,AdditionalFunctions.getRandom(1,(int)budget,2) );
+    public void goodHasBeenDeleted(int id){
+        for(int i=0; i<purchaseList.size(); i++){
+            if(purchaseList.get(i).getSubjectId()==id){
+                purchaseList.remove(i);
+                i--;
+            }
+        }
     }
+
+    protected void buy(){}
 
     public synchronized void display(){
       System.out.print("imie: " + firstName + " nazwisko: " + surname + " ");

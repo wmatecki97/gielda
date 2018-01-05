@@ -1,10 +1,9 @@
 package AllObjects.Goods;
 
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.AllInstancess;
-import functionalClasses.DataGenerator.DataGenerator;
+import AllObjects.GUI.PageOpener;
+import AllObjects.functionalClasses.AdditionalFunctions;
+import AllObjects.functionalClasses.DataGenerator.DataGenerator;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Currency extends Goods {
@@ -14,12 +13,16 @@ public class Currency extends Goods {
 
 
     public Currency(){
+        try{
 
-        name = DataGenerator.getCurrency();
-        int numberOfCountries = AdditionalFunctions.getRandom(1,5);
-        countries = DataGenerator.getCountries(numberOfCountries);
-        countriesList = AdditionalFunctions.ListToString(countries);
-
+            name = DataGenerator.getCurrency();
+            int numberOfCountries = AdditionalFunctions.getRandom(1,5);
+            countries = DataGenerator.getCountries(numberOfCountries);
+            countriesList = AdditionalFunctions.ListToString(countries);
+        }
+        catch(Exception e){
+            PageOpener.emptyGenerator();
+        }
     }
 
     public synchronized void display(){

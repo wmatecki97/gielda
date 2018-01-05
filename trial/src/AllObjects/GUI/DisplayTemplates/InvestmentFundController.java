@@ -1,12 +1,13 @@
 package AllObjects.GUI.DisplayTemplates;
 
 import AllObjects.Clients.InvestmentFund;
-import AllObjects.Clients.Investor;
-import functionalClasses.MenuFunctionality;
+import AllObjects.GUI.PageOpener;
+import AllObjects.functionalClasses.MenuFunctionality;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -50,6 +51,20 @@ public class InvestmentFundController implements Initializable {
         List<InvestmentFund> list = MenuFunctionality.getInvestmentFundList();
         for(InvestmentFund investmentFund: list)
             data.add(investmentFund);
+
+        tableView.setRowFactory( tv -> {
+            TableRow<InvestmentFund> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+                    InvestmentFund rowData = row.getItem();
+                    if(rowData!=null){
+                        MenuFunctionality.setDisplayedObject(rowData);
+                        PageOpener.detailsInvestmentFund();
+                    }
+                }
+            });
+            return row ;
+        });
 
     }
 }

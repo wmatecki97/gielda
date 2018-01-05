@@ -1,6 +1,6 @@
 package AllObjects.GUI;
 
-import functionalClasses.MenuFunctionality;
+import AllObjects.functionalClasses.MenuFunctionality;
 import javafx.event.ActionEvent;
 
 public class AddPageController {
@@ -34,6 +34,12 @@ public class AddPageController {
     public void addExchange(ActionEvent actionEvent) {
 
         MenuFunctionality.addNewExchange();
+
+    }
+
+    public void addRawMaterial(ActionEvent actionEvent) {
+
+        MenuFunctionality.addNewRawMaterial();
 
     }
 }

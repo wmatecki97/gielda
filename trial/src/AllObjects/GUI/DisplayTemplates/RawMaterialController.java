@@ -1,7 +1,8 @@
 package AllObjects.GUI.DisplayTemplates;
 
-import AllObjects.Clients.Investor;
-import functionalClasses.MenuFunctionality;
+import AllObjects.Goods.Goods;
+import AllObjects.Goods.RawMaterials;
+import AllObjects.functionalClasses.MenuFunctionality;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class RawMaterialController implements Initializable {
     @FXML
-    private TableView<Investor> tableView;
+    private TableView<RawMaterials> tableView;
 
 	@FXML
 	private AnchorPane pane;
@@ -25,28 +26,29 @@ public class RawMaterialController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         tableView.prefWidthProperty().bind(pane.widthProperty());
+        
+        
+        TableColumn nameColumn = new TableColumn("Nazwa");
+        nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
+        TableColumn unitColumn = new TableColumn("Jednostka");
+        unitColumn.setCellValueFactory(new PropertyValueFactory("unit"));
+        TableColumn currencyColumn = new TableColumn("Waluta");
+        currencyColumn.setCellValueFactory(new PropertyValueFactory("currency"));
+        TableColumn valueColumn = new TableColumn("Wartość");
+        valueColumn.setCellValueFactory(new PropertyValueFactory("value"));
+        TableColumn minColumn = new TableColumn("Min");
+        minColumn.setCellValueFactory(new PropertyValueFactory("min"));
+        TableColumn maxColumn = new TableColumn("Max");
+        maxColumn.setCellValueFactory(new PropertyValueFactory("max"));
 
-        TableColumn nameColumn = new TableColumn("Imię");
-        nameColumn.setCellValueFactory(new PropertyValueFactory("firstName"));
-        TableColumn surnameColumn = new TableColumn("Nazwisko");
-        surnameColumn.setCellValueFactory(new PropertyValueFactory("surname"));
-        TableColumn budgetColumn = new TableColumn("budzet");
-        budgetColumn.setCellValueFactory(new PropertyValueFactory("budget"));
-        TableColumn peselColumn = new TableColumn("PESEL");
-        peselColumn.setCellValueFactory(new PropertyValueFactory("PESEL"));
-//        TableColumn = new TableColumn("");
-
-        nameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(4));
-        surnameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(4));
-        budgetColumn.prefWidthProperty().bind(tableView.widthProperty().divide(4));
-        peselColumn.prefWidthProperty().bind(tableView.widthProperty().divide(4));
 
 
-        tableView.getColumns().addAll(nameColumn, surnameColumn, budgetColumn, peselColumn);
-        ObservableList<Investor> data = tableView.getItems();
-        List<Investor> list = MenuFunctionality.getInvestorList();
+
+        tableView.getColumns().addAll(nameColumn, unitColumn, currencyColumn, valueColumn, minColumn, maxColumn);
+        ObservableList<RawMaterials> data = tableView.getItems();
+        List<Goods> list = MenuFunctionality.getRawMaterialList();
         for (int i = -0; i < list.size(); i++) {
-            data.add((Investor) list.get(i));
+            data.add((RawMaterials) list.get(i));
         }
 
     }

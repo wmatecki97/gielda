@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="AllObjects.GUI.DisplayTemplates.DetailedView.CompanyDetails"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Label fx:id="l1" layoutX="50.0" layoutY="50.0" text="Imię" />
+        <Label fx:id="l2" layoutX="200.0" layoutY="50.0" text="Nazwisko" />
+        <Label fx:id="l3" layoutX="50.0" layoutY="100.0" text="Budżet" />
+        <Label fx:id="l4" layoutX="200.0" layoutY="100.0" text="ID" />
+        <Label fx:id="l5" layoutX="50.0" layoutY="150.0" text="PESEL" />
+        <TableView fx:id="tableView" layoutX="50.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0">
+        </TableView>
+        <Button fx:id="deleteItem" layoutX="150.0" layoutY="425.0" mnemonicParsing="false" onAction="#deleteItem" prefWidth="100" text="Usuń" />
+    </children>
+
+</AnchorPane>

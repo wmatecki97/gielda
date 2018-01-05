@@ -1,12 +1,12 @@
 package AllObjects.Market;
 
-import AllObjects.Clients.Client;
+import AllObjects.Clients.InvestmentFund;
 import AllObjects.Goods.Company;
 import AllObjects.Goods.Goods;
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.AllInstancess;
-import functionalClasses.DataGenerator.DataGenerator;
-import functionalClasses.MenuFunctionality;
+import AllObjects.functionalClasses.AdditionalFunctions;
+import AllObjects.functionalClasses.AllInstancess;
+import AllObjects.functionalClasses.DataGenerator.DataGenerator;
+import AllObjects.functionalClasses.MenuFunctionality;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +61,7 @@ public class Exchange extends Market implements AllInstancess {
     }
 
     @Override
-    public synchronized void buy (Client client, double cost){
+    public synchronized void buy (InvestmentFund client, double cost){
 
         Goods subject = getRandomGood();
         if(subject.checkIfIsEnough(cost-cost*markup)==false){

@@ -1,10 +1,10 @@
 package AllObjects.Clients;
 
-import AllObjects.Purchases.ParticipationUnit;
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.AllInstancess;
-import functionalClasses.DataGenerator.DataGenerator;
-import functionalClasses.MenuFunctionality;
+import AllObjects.functionalClasses.Purchase;
+import AllObjects.functionalClasses.AdditionalFunctions;
+import AllObjects.functionalClasses.AllInstancess;
+import AllObjects.functionalClasses.DataGenerator.DataGenerator;
+import AllObjects.functionalClasses.MenuFunctionality;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,6 @@ import static java.lang.Thread.sleep;
 
 public class Investor extends Client implements AllInstancess, Runnable{
     private String PESEL;
-    private List<ParticipationUnit> purchaseList;
 
     public Investor(){
         PESEL = DataGenerator.getPESEL();
@@ -35,19 +34,25 @@ public class Investor extends Client implements AllInstancess, Runnable{
 
     }
 
+    public List<Purchase> getPurchaseList() {
+        return purchaseList;
+    }
+
     @Override
     protected synchronized void buy(){
 
+
         if(budget>1){
-            double price = AdditionalFunctions.getRandom(1,(int)budget,2);
+            Double price = new Double(AdditionalFunctions.getRandom(1,(int)budget,2));
             int index =AdditionalFunctions.getRandom(0,MenuFunctionality.getInvestmentFundList().size()-1);
             InvestmentFund fund = MenuFunctionality.getInvestmentFundList().get(index);
-            price = price-price/fund.getCurrentValue();
-            ParticipationUnit unit = new ParticipationUnit(fund.getId(),price/fund.getCurrentValue());
-            fund.buyParticipationUnits(price);
-            purchaseList.add(unit);
-            budget-=price;
+            purchaseList.add(fund.buyPurchases(price));
 
+            budget-=price; //NOT TEST
+
+            if(budget<0)
+                fund.getCurrentValue();
+        //TEST
         }
     }
 

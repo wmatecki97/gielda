@@ -1,15 +1,14 @@
 package AllObjects.Goods;
 
 
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.AllInstancess;
-import functionalClasses.DataGenerator.DataGenerator;
+import AllObjects.functionalClasses.AdditionalFunctions;
+import AllObjects.functionalClasses.DataGenerator.DataGenerator;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import static functionalClasses.AdditionalFunctions.getRandom;
-import static functionalClasses.AdditionalFunctions.split;
+import static AllObjects.functionalClasses.AdditionalFunctions.getRandom;
+import static AllObjects.functionalClasses.AdditionalFunctions.split;
 import static java.lang.Thread.sleep;
 import java.util.List;
 
@@ -27,6 +26,7 @@ public class Company extends Goods implements Runnable{
     private int volume;
     private double turnover;
     private double lastActionsLeftValue;
+    private List<Double> valueList;
 
     public synchronized int getNumberOfActions() {
         return numberOfActions;
@@ -60,7 +60,7 @@ public class Company extends Goods implements Runnable{
         return valueList;
     }
 
-    private List<Double> valueList;
+
 
     private synchronized void addToValueList(Double value){
         valueList.add(value);
@@ -86,13 +86,12 @@ public class Company extends Goods implements Runnable{
         addToValueList(getValue());
         setLastActionsLeftValue(getValue());
 
-        Thread t = new Thread(this);
-        t.start();
     }
 
     private synchronized void work(){
         double temp = getValue();
-        setValue(getValue()*(1+1-getActionsLeft()/getLastActionsLeftValue()));
+        double pow = Math.pow(-1, (double)AdditionalFunctions.getRandom(1,2)); double multi = AdditionalFunctions.getRandom(1,50,2)/100;
+        setValue(getValue()+(getValue()*multi*pow));
         setLastActionsLeftValue(temp);
         lastActionsLeftValue = temp;
         income = getRandom(0,100000,2);
@@ -112,7 +111,7 @@ public class Company extends Goods implements Runnable{
         while(true)
         {
             try{
-                sleep(5000);
+                sleep(500);
             }
             catch (Exception e){}
             work();

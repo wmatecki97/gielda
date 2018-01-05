@@ -1,11 +1,8 @@
 package AllObjects.Market;
 
-import AllObjects.Goods.Currency;
 import AllObjects.Goods.Goods;
 import AllObjects.Goods.RawMaterials;
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.AllInstancess;
-import functionalClasses.MenuFunctionality;
+import AllObjects.functionalClasses.MenuFunctionality;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,7 +2,7 @@ package AllObjects.GUI.DisplayTemplates;
 
 import AllObjects.Goods.Currency;
 import AllObjects.Goods.Goods;
-import functionalClasses.MenuFunctionality;
+import AllObjects.functionalClasses.MenuFunctionality;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

@@ -1,9 +1,10 @@
 package AllObjects.Goods;
 
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.AllInstancess;
+import AllObjects.functionalClasses.AdditionalFunctions;
+import AllObjects.functionalClasses.AllInstancess;
+import AllObjects.functionalClasses.HasName;
 
-public class Goods implements AllInstancess {
+public class Goods implements AllInstancess, HasName {
 
     protected double value;
     protected  String name;

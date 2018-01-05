@@ -1,6 +1,6 @@
 package AllObjects.GUI;
 
-import functionalClasses.MenuFunctionality;
+import AllObjects.functionalClasses.MenuFunctionality;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -9,8 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-
-import java.lang.management.ManagementFactory;
 
 public class Main extends Application {
 
@@ -39,7 +37,14 @@ public class Main extends Application {
         MenuFunctionality.addNewCurrency();
         MenuFunctionality.addNewCompany();
         MenuFunctionality.addNewCompany();
+        MenuFunctionality.addNewInvestor();
+        MenuFunctionality.addNewInvestor();
+        MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();MenuFunctionality.addNewInvestor();
+
         MenuFunctionality.addNewInvestmentFund();
+        MenuFunctionality.addNewInvestmentFund();
+        MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();MenuFunctionality.addNewInvestmentFund();
+
         MenuFunctionality.addNewRawMaterial();
         MenuFunctionality.addNewExchange();
         MenuFunctionality.addNewInvestor();

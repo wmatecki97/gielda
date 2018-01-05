@@ -1,7 +1,7 @@
 package AllObjects.GUI.DisplayTemplates;
 
 import AllObjects.Goods.Company;
-import functionalClasses.MenuFunctionality;
+import AllObjects.functionalClasses.MenuFunctionality;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,9 +22,8 @@ public class CompanyController implements Initializable {
 	@FXML
 	private AnchorPane pane;
 
-    //@FXML private TableColumn<Investor, String>;
-
     public void initialize(URL location, ResourceBundle resources) {
+
 
         tableView.prefWidthProperty().bind(pane.widthProperty());
 

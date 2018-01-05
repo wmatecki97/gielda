@@ -1,7 +1,7 @@
 package AllObjects;
 
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.AllInstancess;
+import AllObjects.functionalClasses.AdditionalFunctions;
+import AllObjects.functionalClasses.AllInstancess;
 
 public class ShareIndex implements AllInstancess {
     private int index;

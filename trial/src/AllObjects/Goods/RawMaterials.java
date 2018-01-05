@@ -1,12 +1,14 @@
 package AllObjects.Goods;
 
-import functionalClasses.AdditionalFunctions;
-import functionalClasses.AllInstancess;
-import functionalClasses.DataGenerator.DataGenerator;
+import AllObjects.GUI.PageOpener;
+import AllObjects.functionalClasses.AdditionalFunctions;
+import AllObjects.functionalClasses.DataGenerator.DataGenerator;
+import AllObjects.functionalClasses.MenuFunctionality;
 
 public class RawMaterials extends Goods{
 
     private String unit;
+    private int currencyId;
     private String currency;
 
     private double min;
@@ -14,8 +16,8 @@ public class RawMaterials extends Goods{
 
     public RawMaterials(){
         //NAZWA I JEDNOSTKA DO ZDEFINIOWANIA W KLASIE DATAGENERATOR
-        currency = DataGenerator.getCurrency();
-
+        currencyId = MenuFunctionality.getCurrencyList().get(AdditionalFunctions.getRandom(0,MenuFunctionality.getCurrencyList().size()-1)).getId();
+        currency = MenuFunctionality.getGood(currencyId).getName();
         min = value;
         max = value;
         try{
@@ -25,7 +27,7 @@ public class RawMaterials extends Goods{
         }
         catch (NullPointerException e)
         {
-            System.out.println("Nie ma juz wiecej walut do dodania");
+            PageOpener.emptyGenerator();
         }
     }
 
@@ -46,7 +48,7 @@ public class RawMaterials extends Goods{
 
         output.name = strArr[0];
         output.unit = strArr[1];
-        output.currency = strArr[2];
+        //output.currency = strArr[2];
         output.value = Double.parseDouble(strArr[3]);
         output.min = Double.parseDouble(strArr[4]);
         output.max = Double.parseDouble(strArr[5]);
@@ -70,12 +72,12 @@ public class RawMaterials extends Goods{
         this.unit = unit;
     }
 
-    public synchronized String getCurrency() {
-        return currency;
+    public synchronized int getCurrencyId() {
+        return currencyId;
     }
 
-    public synchronized void setCurrency(String Currency) {
-        this.currency = Currency;
+    public synchronized String getCurrency() {
+        return currency;
     }
 
     public synchronized double getValue() {

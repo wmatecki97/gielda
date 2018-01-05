@@ -1,8 +1,8 @@
 package AllObjects.GUI.DisplayTemplates;
 
 import AllObjects.Market.Exchange;
-import functionalClasses.AllInstancess;
-import functionalClasses.MenuFunctionality;
+import AllObjects.functionalClasses.AllInstancess;
+import AllObjects.functionalClasses.MenuFunctionality;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

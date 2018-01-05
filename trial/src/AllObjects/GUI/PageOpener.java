@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -58,15 +60,15 @@ public class PageOpener {
 
 
     public static void displayPage(){
+        open("DisplayPageView.fxml", "Wyświetl dane", 450, 300, true);
+    }
 
-        open("DisplayPageView.fxml", "Wyświetl dane", 400, 300, true);
-
+    public static void emptyGenerator(){
+        open("EmptyGeneratorPopUp.fxml", "Błąd", 150, 600, false);
     }
 
     public static void addPage(){
-
-        open("AddPageView.fxml", "Dodaj nowe obiekty", 325, 300, false);
-
+        open("AddPageView.fxml", "Dodaj nowe obiekty", 375, 300, false);
     }
 
     public static void investorPage(){
@@ -74,7 +76,7 @@ public class PageOpener {
     }
 
     public static void investmentFundPage(){
-        open("DisplayTemplates/InvestmentFundView.fxml", "Fundusze inwestycyjne", 400, 300, false);
+        open("DisplayTemplates/InvestmentFundView.fxml", "Fundusze inwestycyjne", 400, 500, false);
     }
 
     public static void companyPage(){
@@ -88,5 +90,17 @@ public class PageOpener {
     public static void exchangePage(){
         open("./DisplayTemplates/ExchangeView.fxml", "Giełdy", 400, 1300, false);
     }
+
+    public static void rawMaterialPage(){open("./DisplayTemplates/RawMaterialView.fxml", "Surowce", 400, 800, false);
+    }
+
+    public static void detailsInvestor(){
+        open("./DisplayTemplates/DetailedView/Investor.fxml", "Szczegóły inwestora", 500, 400, false);
+    }
+
+    public static void detailsInvestmentFund(){
+        open("./DisplayTemplates/DetailedView/InvestmentFund.fxml", "Szczegóły funduszu inwestycyjnego", 550, 400, false);
+    }
+
 
 }
