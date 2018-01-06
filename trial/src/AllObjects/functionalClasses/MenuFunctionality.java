@@ -12,8 +12,11 @@ import AllObjects.Market.CurrencyMarket;
 import AllObjects.Market.Exchange;
 import AllObjects.Market.Market;
 import AllObjects.Market.RawMaterialsMarket;
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.ValuePropertyLoader;
 
 
+import java.io.CharArrayReader;
+import java.time.temporal.ValueRange;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
@@ -30,7 +33,11 @@ public class MenuFunctionality {
     static CurrencyMarket currencyMarket;
     static RawMaterialsMarket rawMaterialsMarket;
     static AllInstancess displayedObject;
-    static Semaphore sem;
+    static List<Integer> chartList;
+
+    static Semaphore displaysemaphore;
+    static Semaphore chartSemaphore;//semaphore to wait when chart window is gathering and processing data
+
 
     public static void initialize(){
 
@@ -48,19 +55,11 @@ public class MenuFunctionality {
         companyList = new ArrayList<>();
         exchangeList = new ArrayList<>();
         shareIndexList = new ArrayList<>();
+        chartList=new ArrayList<>();
 
-        sem = new Semaphore(1);
+        displaysemaphore = new Semaphore(1);
+        chartSemaphore = new Semaphore(1);
 
-    }
-    
-    public static void addCompanyToExchanges(Goods g){
-        List<AllInstancess> list = MenuFunctionality.getExchangeList();
-        for(int i=0; i<list.size(); i++){
-            if(AdditionalFunctions.getRandom(0,5)==0){
-                Exchange temp = (Exchange)  list.get(i);
-                temp.addToGoodsList(g);
-            }
-        }
     }
 
     public static void addNewInvestor(){Investor inv = new Investor(); investorList.add(inv); Thread t = new Thread(inv); t.start();}
@@ -72,6 +71,38 @@ public class MenuFunctionality {
     }
     public static void addNewExchange(){exchangeList.add(new Exchange());}
     public static void addNewRawMaterial(){rawMaterialList.add(new RawMaterials());}
+
+    public static List<Investor> getInvestorList() {
+        return investorList;
+    }
+    public static List<InvestmentFund> getInvestmentFundList() {
+        return investmentFundList;
+    }
+    public static List<Company> getCompanyList() {
+        return companyList;
+    }
+    public static List<Goods> getCurrencyList() {
+        return currencyList;
+    }
+    public static List<AllInstancess> getExchangeList() {
+        return exchangeList;
+    }
+    public static List<Goods> getRawMaterialList() {
+        return rawMaterialList;
+    }
+    public static List<ShareIndex> getShareIndexList() {
+        return shareIndexList;
+    }
+
+    public static void addCompanyToExchanges(Goods g){
+        List<AllInstancess> list = MenuFunctionality.getExchangeList();
+        for(int i=0; i<list.size(); i++){
+            if(AdditionalFunctions.getRandom(0,5)==0){
+                Exchange temp = (Exchange)  list.get(i);
+                temp.addToGoodsList(g);
+            }
+        }
+    }
 
     private static void buy(int cost, Client client){/*
         boolean isGood=false;
@@ -98,28 +129,6 @@ public class MenuFunctionality {
 
     }
 
-    public static List<Investor> getInvestorList() {
-        return investorList;
-    }
-    public static List<InvestmentFund> getInvestmentFundList() {
-        return investmentFundList;
-    }
-    public static List<Company> getCompanyList() {
-        return companyList;
-    }
-    public static List<Goods> getCurrencyList() {
-        return currencyList;
-    }
-    public static List<AllInstancess> getExchangeList() {
-        return exchangeList;
-    }
-    public static List<Goods> getRawMaterialList() {
-        return rawMaterialList;
-    }
-    public static List<ShareIndex> getShareIndexList() {
-        return shareIndexList;
-    }
-
     public static Market getrandomMarket() {
 
         int rand = AdditionalFunctions.getRandom(0,2);
@@ -134,13 +143,13 @@ public class MenuFunctionality {
         return displayedObject;
     }//is synchronized
 
-    public static void releaseSemaphore(){
-        sem.release();
+    public static void releaseDisplayedObjectSemaphore(){
+        displaysemaphore.release();
     }//is synchronized
 
     public static void setDisplayedObject(AllInstancess displayedObject) {
         try {
-            sem.acquire();
+            displaysemaphore.acquire();
         } catch (InterruptedException e) {}
         MenuFunctionality.displayedObject = displayedObject;
     }//is synchronized
@@ -188,11 +197,6 @@ public class MenuFunctionality {
 
     }
 
-    public static InvestmentFund getInvestmentFund(int investmentFundId){
-
-        return null;
-    }
-
     public static void deleteObject(int objectId){
 
         synchronized (investmentFundList){
@@ -227,4 +231,57 @@ public class MenuFunctionality {
 
     }// is synchronized
 
+
+
+    public static void addChartLine(Company company){
+
+        synchronized (company) {
+            if(checkOccuranceInChart(company.getId())){
+                deleteChartLine(company.getId());
+            }
+            synchronized (chartList){
+                chartList.add(company.getId());
+            }
+        }
+    }
+    public static boolean checkOccuranceInChart(int id){
+        synchronized (chartList){
+            for(int line: chartList){
+                if(line==id)return true;
+            }
+        }
+        return false;
+    }
+    public static void deleteChartLine(int id){
+        synchronized (chartList){
+            for(int i=0; i<chartList.size(); i++){
+                if(chartList.get(i)==id){
+                    chartList.remove(i);
+                    return;
+                }
+            }
+        }
+
+    }
+    public static List<ChartLine> getChartList() {
+        List<ChartLine> chartItemList = new ArrayList<>();
+        synchronized (chartList){
+            for(int id: chartList){
+                Company company = (Company)getGood(id);
+                synchronized (company){
+                    ChartLine chartLine = new ChartLine(company.getId(), company.getName());
+                    List<Double> valueList = new ArrayList<>();
+                    List<Double> from =company.getValueList();
+                    for(double val: from){
+                        valueList.add(val);
+                    }
+                    chartLine.setList(valueList);
+                    chartItemList.add(chartLine);
+                }
+            }
+        }
+
+
+        return chartItemList;
+    }
 }

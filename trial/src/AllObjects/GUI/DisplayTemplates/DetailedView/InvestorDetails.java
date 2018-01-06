@@ -49,7 +49,7 @@ public class InvestorDetails implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         investor = (Investor) MenuFunctionality.getDisplayedObject();
-        MenuFunctionality.releaseSemaphore();
+        MenuFunctionality.releaseDisplayedObjectSemaphore();
 
         l1.setText("Imię: "+investor.getFirstName());
         l2.setText("Nazwisko: " + investor.getSurname());

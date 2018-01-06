@@ -16,6 +16,7 @@ public class Company extends Goods implements Runnable{
 
     private Date date;
     private double min;
+    private double max;
     private int numberOfActions;
     private int actionsLeft;
     private double openingValue;
@@ -67,12 +68,22 @@ public class Company extends Goods implements Runnable{
     }
 
 
+    public synchronized double getMax() {
+        return max;
+    }
+
+    public synchronized void setMax(double max) {
+        this.max = max;
+    }
+
     public Company(){
         setName(DataGenerator.getName());
         setDate(DataGenerator.getDate());
         setOpeningValue(getRandom(1,10000,2));
         setValue(getOpeningValue());
-        setMin(getRandom(0, 10000,2));
+        setMin(getOpeningValue());
+        setMax(getOpeningValue());
+
         setnumberOfActions(getRandom(0,2000));
         setActionsLeft(getNumberOfActions());
         setIncome(getRandom(0,100000,2));
@@ -92,6 +103,9 @@ public class Company extends Goods implements Runnable{
         double temp = getValue();
         double pow = Math.pow(-1, (double)AdditionalFunctions.getRandom(1,2)); double multi = AdditionalFunctions.getRandom(1,50,2)/100;
         setValue(getValue()+(getValue()*multi*pow));
+        if(getMax()<getValue())max=value;
+        if(getMin()>getValue())min=value;
+        //MOZLIWE ZE KOLEJNE DWA WERSY SA DO WYWALENIA
         setLastActionsLeftValue(temp);
         lastActionsLeftValue = temp;
         income = getRandom(0,100000,2);

@@ -43,4 +43,7 @@ public class StartPageController{
     }
 
 
+    public void chartAction(ActionEvent actionEvent) {
+        PageOpener.chart();
+    }
 }

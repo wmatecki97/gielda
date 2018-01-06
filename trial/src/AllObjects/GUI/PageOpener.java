@@ -103,4 +103,12 @@ public class PageOpener {
     }
 
 
+    public static void detailsCompany() {
+        open("./DisplayTemplates/DetailedView/Company.fxml", "Szczegóły funduszu inwestycyjnego", 450, 627, false);
+    }
+
+    public static void chart() {
+        open("./Chart.fxml", "Wykres", 450, 775, false);
+
+    }
 }

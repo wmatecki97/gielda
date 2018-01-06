@@ -104,7 +104,7 @@ public class AdditionalFunctions {
 
 
         if(precission>9)precission=9;
-        int exponent = (int)pow(10.0, (double)precission);
+        int exponent = (int)pow(10.0, (double)precission+1);
         return getRandom(min*exponent, max*exponent)/exponent;
     }
 
@@ -120,5 +120,16 @@ public class AdditionalFunctions {
 
     }
 
+    public static String doubleToShortString(double d){
+        int length=0;
+        for(int i=1; i<d*1000; i*=10){
+            length++;
+        }
+        String result = String.valueOf(d);
+        if(result.length()<length)
+            length=result.length();
+        return String.valueOf(d).substring(0,length);
+
+    }
 
 }

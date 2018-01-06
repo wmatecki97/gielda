@@ -11,14 +11,28 @@
             fx:controller="AllObjects.GUI.DisplayTemplates.DetailedView.CompanyDetails"
             prefHeight="400.0" prefWidth="600.0">
     <children>
-        <Label fx:id="l1" layoutX="50.0" layoutY="50.0" text="Imię" />
-        <Label fx:id="l2" layoutX="200.0" layoutY="50.0" text="Nazwisko" />
-        <Label fx:id="l3" layoutX="50.0" layoutY="100.0" text="Budżet" />
-        <Label fx:id="l4" layoutX="200.0" layoutY="100.0" text="ID" />
-        <Label fx:id="l5" layoutX="50.0" layoutY="150.0" text="PESEL" />
-        <TableView fx:id="tableView" layoutX="50.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0">
-        </TableView>
-        <Button fx:id="deleteItem" layoutX="150.0" layoutY="425.0" mnemonicParsing="false" onAction="#deleteItem" prefWidth="100" text="Usuń" />
+        <Label fx:id="l1" layoutX="50.0" layoutY="50.0" text="" />
+        <Label fx:id="l2" layoutX="350.0" layoutY="50.0" text="" />
+
+        <Label fx:id="l3" layoutX="50.0" layoutY="100.0" text="" />
+        <Label fx:id="l4" layoutX="350.0" layoutY="100.0" text="" />
+
+        <Label fx:id="l5" layoutX="50.0" layoutY="150.0" text="" />
+        <Label fx:id="l6" layoutX="350.0" layoutY="150.0" text="" />
+
+        <Label fx:id="l7" layoutX="50.0" layoutY="200.0" text="" />
+        <Label fx:id="l8" layoutX="350.0" layoutY="200.0" text="" />
+
+        <Label fx:id="l9" layoutX="50.0" layoutY="250.0" text="" />
+        <Label fx:id="l10" layoutX="350.0" layoutY="250.0" text="" />
+
+        <Label fx:id="l11" layoutX="50.0" layoutY="300.0" text="" />
+        <Label fx:id="l12" layoutX="350.0" layoutY="300.0" text="" />
+
+        <Button fx:id="deleteItem" layoutX="50.0" layoutY="400.0" mnemonicParsing="false" onAction="#deleteItem" prefWidth="200" text="Usuń" />
+        <Button fx:id="addToChart" layoutX="350.0" layoutY="400.0" mnemonicParsing="false" onAction="#addToChart" prefWidth="200" text="Dodaj do wykresu" />
+        <Button fx:id="deleteFromChart" layoutX="350.0" layoutY="400.0" mnemonicParsing="false" onAction="#deleteFromChart" prefWidth="200" text="Usuń z wykresu" />
+
     </children>
 
 </AnchorPane>
