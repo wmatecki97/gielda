@@ -1,5 +1,7 @@
 package AllObjects.Market;
 
+import AllObjects.Clients.InvestmentFund;
+import AllObjects.Goods.Currency;
 import AllObjects.Goods.Goods;
 import AllObjects.Goods.RawMaterials;
 import AllObjects.functionalClasses.MenuFunctionality;
@@ -19,6 +21,17 @@ public class RawMaterialsMarket extends Market implements Serializable {
         for(Goods material: rawMaterialList){
 
             goodsList.add(material);
+        }
+    }
+
+    @Override
+    public synchronized void buy(InvestmentFund client, double cost){
+        Goods subject;
+        synchronized (subject = getRandomGood()){
+            RawMaterials rawMaterials = (RawMaterials) subject;
+            Currency currency = (Currency) MenuFunctionality.getGood(rawMaterials.getCurrencyId());
+            cost/=currency.getValue();
+            buy(client, subject, cost);
         }
     }
 /*

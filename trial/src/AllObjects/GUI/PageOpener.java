@@ -79,7 +79,7 @@ public class PageOpener {
     }
 
     public synchronized static void companyPage(){
-        open("./DisplayTemplates/CompanyView.fxml", "Spółki", 400, 1300, false);
+        open("./DisplayTemplates/CompanyView.fxml", "Spółki", 400, 700, false);
     }
 
     public synchronized static void currencyPage(){

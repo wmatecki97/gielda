@@ -36,11 +36,9 @@ public class Market implements Serializable{
 
         double budget = client.getBudget();
 
-//        client.setBudget(budget-cost-markupValue);
+        client.setBudget(budget-cost-markupValue);
 
-//        client.addToPurchasesList(purchase);
-
-        //System.out.println(purchase.getClientId() + " "+ purchase.getSubjectId());
+        client.addToPurchasesList(purchase);
 
     }
 

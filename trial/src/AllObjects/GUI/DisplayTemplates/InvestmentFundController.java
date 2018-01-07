@@ -29,24 +29,23 @@ public class InvestmentFundController implements Initializable {
 
 
         tableView.prefWidthProperty().bind(pane.widthProperty());
+        tableView.prefHeightProperty().bind(pane.heightProperty());
 
 
-
-        TableColumn firstNameColumn = new TableColumn("Imię");
+/*      TableColumn firstNameColumn = new TableColumn("Imię");
         firstNameColumn.setCellValueFactory(new PropertyValueFactory("firstName"));
         TableColumn surnameColumn = new TableColumn("Nazwisko");
         surnameColumn.setCellValueFactory(new PropertyValueFactory("surname"));
-        TableColumn nameColumn = new TableColumn("Nazwa");
+*/        TableColumn nameColumn = new TableColumn("Nazwa");
         nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
         TableColumn valueColumn = new TableColumn("Wartość jednostki uczestnictwa");
         valueColumn.setCellValueFactory(new PropertyValueFactory("currentValue"));
 
-        firstNameColumn.prefWidthProperty().bind(pane.widthProperty().divide(4));
-        surnameColumn.prefWidthProperty().bind(pane.widthProperty().divide(4));
-        nameColumn.prefWidthProperty().bind(pane.widthProperty().divide(4));
-        valueColumn.prefWidthProperty().bind(pane.widthProperty().divide(4));
 
-        tableView.getColumns().addAll(firstNameColumn, surnameColumn, nameColumn, valueColumn);
+        nameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(2));
+        valueColumn.prefWidthProperty().bind(tableView.widthProperty().divide(2));
+
+        tableView.getColumns().addAll(nameColumn, valueColumn);
         ObservableList<InvestmentFund> data = tableView.getItems();
         List<InvestmentFund> list = MenuFunctionality.getInvestmentFundList();
         for(InvestmentFund investmentFund: list)

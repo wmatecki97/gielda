@@ -27,6 +27,7 @@ public class ExchangeController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         tableView.prefWidthProperty().bind(pane.widthProperty());
+        tableView.prefHeightProperty().bind(pane.heightProperty());
 
         TableColumn nameColumn = new TableColumn("Nazwa");
         nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
@@ -40,9 +41,18 @@ public class ExchangeController implements Initializable {
         adressColumn.setCellValueFactory(new PropertyValueFactory("adress"));
         TableColumn markupColumn = new TableColumn("Marża");
         markupColumn.setCellValueFactory(new PropertyValueFactory("markup"));
-        TableColumn goodsColumn = new TableColumn("Lista akcji możliwyych do kupienia");
+        TableColumn goodsColumn = new TableColumn("Lista spółek zarejestrowanych na giełdzie");
         goodsColumn.setCellValueFactory(new PropertyValueFactory("goods"));
 
+
+        nameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(5));
+        countryColumn.prefWidthProperty().bind(tableView.widthProperty().divide(10));
+        currencyColumn.prefWidthProperty().bind(tableView.widthProperty().divide(10));
+        cityColumn.prefWidthProperty().bind(tableView.widthProperty().divide(10));
+        adressColumn.prefWidthProperty().bind(tableView.widthProperty().divide(10));
+        markupColumn.prefWidthProperty().bind(tableView.widthProperty().divide(20));
+        goodsColumn.prefWidthProperty().bind(tableView.widthProperty().divide(2.5));
+    //    goodsColumn.prefWidthProperty().bind(pane.widthProperty().subtract(nameColumn.getWidth()+countryColumn.getWidth()+currencyColumn.getWidth()+cityColumn.getWidth()+adressColumn.getWidth()+markupColumn.getWidth()));
 
         tableView.getColumns().addAll(nameColumn, countryColumn, currencyColumn, cityColumn, adressColumn, markupColumn, goodsColumn);
         ObservableList<Exchange> data = tableView.getItems();

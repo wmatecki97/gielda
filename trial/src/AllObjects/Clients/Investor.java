@@ -26,7 +26,7 @@ public class Investor extends Client implements AllInstancess, Runnable, Seriali
         while(running)
         {
             try{
-                sleep(5000);
+                sleep(500);
             }
             catch (Exception e){}
             buy();
@@ -41,13 +41,15 @@ public class Investor extends Client implements AllInstancess, Runnable, Seriali
 
     @Override
     protected synchronized void buy(){
-
-
         if(budget>1){
             Double price = new Double(AdditionalFunctions.getRandom(1,(int)budget,2));
             int index =AdditionalFunctions.getRandom(0,MenuFunctionality.getInvestmentFundList().size()-1);
-            purchaseList.add(MenuFunctionality.buyParticipationUnits(price));
-            budget-=price;
+            Purchase purchase=MenuFunctionality.buyParticipationUnits(price);
+            if(purchase.getAmount()>0){
+                addToPurchasesList(purchase);
+                budget-=price;
+            }
+
 
         }
     }

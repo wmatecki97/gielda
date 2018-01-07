@@ -1,6 +1,8 @@
 package AllObjects.Clients;
 
+import AllObjects.Goods.Currency;
 import AllObjects.Goods.Goods;
+import AllObjects.Goods.RawMaterials;
 import AllObjects.functionalClasses.Purchase;
 import AllObjects.functionalClasses.AdditionalFunctions;
 import AllObjects.functionalClasses.AllInstancess;
@@ -40,15 +42,13 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
 
     }
 
-
-
     @Override
     public void run() {
 
         while(running)
         {
             try{
-                sleep(5000);
+                sleep(500);
             }
             catch (Exception e){}
             buy();
@@ -57,18 +57,20 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
 
     }
 
-
-    public synchronized void addToPurchasesList(Purchase purchase){
-        purchaseList.add(purchase);
-    }
-
     private synchronized void work(){
 
         if(purchaseList.size()>0){
             double value=0.0;
             for(Purchase purchase: purchaseList){
                 Goods good = (Goods)MenuFunctionality.getGood(purchase.getSubjectId());
-                value+=good.getValue()*purchase.getAmount();
+                if(good.getClass().getSimpleName()== "RawMaterials"){
+                    RawMaterials rawMaterials = (RawMaterials)good;
+                    Currency cur = (Currency)MenuFunctionality.getGood(rawMaterials.getCurrencyId());
+                    value+=good.getValue()*cur.getValue();
+                }
+                else{
+                    value+=good.getValue()*purchase.getAmount();
+                }
             }
             value=(value+budget)/unitsSold;
             setCurrentValue(value);

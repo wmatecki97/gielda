@@ -29,6 +29,7 @@ public class InvestorController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         tableView.prefWidthProperty().bind(pane.widthProperty());
+        tableView.prefHeightProperty().bind(pane.heightProperty());
 
         TableColumn nameColumn = new TableColumn("Imię");
         nameColumn.setCellValueFactory(new PropertyValueFactory("firstName"));

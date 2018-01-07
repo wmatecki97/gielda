@@ -26,8 +26,9 @@ public class RawMaterialController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         tableView.prefWidthProperty().bind(pane.widthProperty());
-        
-        
+        tableView.prefHeightProperty().bind(pane.heightProperty());
+
+
         TableColumn nameColumn = new TableColumn("Nazwa");
         nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
         TableColumn unitColumn = new TableColumn("Jednostka");
@@ -41,7 +42,12 @@ public class RawMaterialController implements Initializable {
         TableColumn maxColumn = new TableColumn("Max");
         maxColumn.setCellValueFactory(new PropertyValueFactory("max"));
 
-
+        nameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
+        unitColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
+        currencyColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
+        valueColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
+        minColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
+        maxColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
 
 
         tableView.getColumns().addAll(nameColumn, unitColumn, currencyColumn, valueColumn, minColumn, maxColumn);

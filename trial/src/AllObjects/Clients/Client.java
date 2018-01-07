@@ -23,9 +23,9 @@ public class Client implements Serializable {
         running=true;
     }
 
-    public void terminate(){running=false;}
+    public synchronized void terminate(){running=false;}
 
-    public void goodHasBeenDeleted(int id){
+    public synchronized void goodHasBeenDeleted(int id){
         for(int i=0; i<purchaseList.size(); i++){
             if(purchaseList.get(i).getSubjectId()==id){
                 purchaseList.remove(i);
@@ -36,6 +36,16 @@ public class Client implements Serializable {
 
     protected void buy(){}
 
+    public synchronized void addToPurchasesList(Purchase purchase){
+        for(Purchase purch: purchaseList){
+            if(purch.getSubjectId()==purchase.getSubjectId()){
+                purch.setAmount(purch.getAmount()+purchase.getAmount());
+                return;
+            }
+        }
+        purchaseList.add(purchase);
+    }
+
     public synchronized void display(){
       System.out.print("imie: " + firstName + " nazwisko: " + surname + " ");
     }
@@ -44,7 +54,7 @@ public class Client implements Serializable {
         return(firstName + " " + surname);
     }
 
-    public int getId() {
+    public synchronized int getId() {
         return id;
     }
 

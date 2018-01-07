@@ -29,6 +29,7 @@ public class CurrencyController implements Initializable{
 
 
         tableView.prefWidthProperty().bind(pane.widthProperty());
+        tableView.prefHeightProperty().bind(pane.heightProperty());
 
         TableColumn nameColumn = new TableColumn("Nazwa");
         nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
@@ -37,7 +38,9 @@ public class CurrencyController implements Initializable{
         TableColumn countryColumn= new TableColumn("Lista krajów");
         countryColumn.setCellValueFactory(new PropertyValueFactory("countriesList"));
 
-
+        nameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(4));
+        priceColumn.prefWidthProperty().bind(tableView.widthProperty().divide(4));
+        countryColumn.prefWidthProperty().bind(tableView.widthProperty().divide(2));
 
 
         tableView.getColumns().addAll(nameColumn, priceColumn, countryColumn);

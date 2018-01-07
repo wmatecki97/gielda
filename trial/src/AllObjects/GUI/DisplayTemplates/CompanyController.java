@@ -29,34 +29,26 @@ public class CompanyController implements Initializable {
 
 
         tableView.prefWidthProperty().bind(pane.widthProperty());
+        tableView.prefHeightProperty().bind(pane.heightProperty());
 
         TableColumn nameColumn = new TableColumn("Nazwa");
         nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
-        TableColumn dateColumn = new TableColumn("Data pierwszej wyceny");
-        dateColumn.setCellValueFactory(new PropertyValueFactory("date"));
-        TableColumn minColumn = new TableColumn("Minimalna wartość akcji");
-        minColumn.setCellValueFactory(new PropertyValueFactory("min"));
-        TableColumn numberOfActionColumn = new TableColumn("Liczba akcji");
-        numberOfActionColumn.setCellValueFactory(new PropertyValueFactory("numberOfActions"));
-        TableColumn openingColumn = new TableColumn("Kurs otwarcia");
-        openingColumn.setCellValueFactory(new PropertyValueFactory("openingValue"));
         TableColumn valueColumn = new TableColumn("Aktualna wartość akcji");
         valueColumn.setCellValueFactory(new PropertyValueFactory("value"));
         TableColumn profitColumn = new TableColumn("Zysk");
         profitColumn.setCellValueFactory(new PropertyValueFactory("profit"));
         TableColumn incomeColumn = new TableColumn("Przychód");
         incomeColumn.setCellValueFactory(new PropertyValueFactory("income"));
-        TableColumn ownCapitalColumn = new TableColumn("Kapitał własny");
-        ownCapitalColumn.setCellValueFactory(new PropertyValueFactory("individualCapital"));
-        TableColumn factoryCapitalColumn = new TableColumn("Kapitał zakładowy");
-        factoryCapitalColumn.setCellValueFactory(new PropertyValueFactory("factoryCapital"));
-        TableColumn volumeColumn = new TableColumn("Wolumen");
-        volumeColumn.setCellValueFactory(new PropertyValueFactory("volume"));
         TableColumn turnoverColumn = new TableColumn("Obroty");
         turnoverColumn.setCellValueFactory(new PropertyValueFactory("turnover"));
 
+        nameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(3.5));
+        valueColumn.prefWidthProperty().bind(tableView.widthProperty().divide(3.5));
+        profitColumn.prefWidthProperty().bind(tableView.widthProperty().divide(7));
+        incomeColumn.prefWidthProperty().bind(tableView.widthProperty().divide(7));
+        turnoverColumn.prefWidthProperty().bind(tableView.widthProperty().divide(7));
 
-        tableView.getColumns().addAll(nameColumn, dateColumn, minColumn, numberOfActionColumn, openingColumn, valueColumn, profitColumn, incomeColumn, ownCapitalColumn, factoryCapitalColumn, volumeColumn, turnoverColumn);
+        tableView.getColumns().addAll(nameColumn, valueColumn, profitColumn, incomeColumn,  turnoverColumn);
         ObservableList<Company> data = tableView.getItems();
         List<Company> list = MenuFunctionality.getCompanyList();
         for (Company company:list) {

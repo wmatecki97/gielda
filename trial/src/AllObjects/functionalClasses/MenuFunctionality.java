@@ -13,7 +13,6 @@ import AllObjects.Market.CurrencyMarket;
 import AllObjects.Market.Exchange;
 import AllObjects.Market.Market;
 import AllObjects.Market.RawMaterialsMarket;
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.ValuePropertyLoader;
 
 
 import java.io.*;
@@ -37,6 +36,7 @@ public class MenuFunctionality {
     static RawMaterialsMarket rawMaterialsMarket;
     static AllInstancess displayedObject;
     static List<Integer> chartList;
+    static List<>
     static String errorMessage;
 
     static Semaphore displaysemaphore;
@@ -95,10 +95,12 @@ public class MenuFunctionality {
         }
     }
     public static void addNewCurrency() {
+        Currency c = new Currency();
         synchronized (currencyList){
-            Currency c = new Currency();
             currencyList.add(c);
         }
+        Thread t = new Thread(c);
+        t.start();
     }
     public static void addNewExchange() {
         synchronized (exchangeList){
@@ -113,13 +115,14 @@ public class MenuFunctionality {
         }
     }
     public static void addNewRawMaterial() {
+        RawMaterials r = new RawMaterials();
         synchronized (rawMaterialList){
             synchronized (currencyList){
-                RawMaterials r = new RawMaterials();
                 rawMaterialList.add(r);
             }
-
         }
+        Thread t = new Thread(r);
+        t.start();
     }
 
     public static List<Investor> getInvestorList() {
@@ -228,10 +231,11 @@ public class MenuFunctionality {
                                                                 is.close();
 
                                                                 for (Company company : companyList) company.terminate();
-                                                                for (InvestmentFund investmentFund : investmentFundList)
-                                                                    investmentFund.terminate();
-                                                                for (Investor investor : investorList)
-                                                                    investor.terminate();
+                                                                for (InvestmentFund investmentFund : investmentFundList)investmentFund.terminate();
+                                                                for (Investor investor : investorList)investor.terminate();
+                                                                for(Goods currency: currencyList)currency.terminate();
+                                                                for(Goods rawMaterials: rawMaterialList)rawMaterials.terminate();
+
 
                                                                 investorList = save.getInvestorList();
                                                                 investmentFundList = save.getInvestmentFundList();

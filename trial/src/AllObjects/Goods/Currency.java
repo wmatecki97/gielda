@@ -28,6 +28,8 @@ public class Currency extends Goods implements Serializable {
         }
     }
 
+
+
     public synchronized void display(){
         System.out.print("nazwa: " + name + " cena: " + super.value + " lista krajow: ");
         String b ="";
@@ -85,4 +87,6 @@ public class Currency extends Goods implements Serializable {
     }
 
     private String countriesList;
+
+
 }
