@@ -79,7 +79,7 @@ public class Company extends Goods implements Runnable{
     public Company(){
         setName(DataGenerator.getName());
         setDate(DataGenerator.getDate());
-        setOpeningValue(getRandom(1,10000,2));
+        setOpeningValue(getRandom(100,10000,2));
         setValue(getOpeningValue());
         setMin(getOpeningValue());
         setMax(getOpeningValue());
@@ -96,13 +96,14 @@ public class Company extends Goods implements Runnable{
         setValueList(new ArrayList<Double>());
         addToValueList(getValue());
         setLastActionsLeftValue(getValue());
-
     }
 
     private synchronized void work(){
         double temp = getValue();
-        double pow = Math.pow(-1, (double)AdditionalFunctions.getRandom(1,2)); double multi = AdditionalFunctions.getRandom(1,50,2)/100;
-        setValue(getValue()+(getValue()*multi*pow));
+        double pow = Math.pow(-1, (double)AdditionalFunctions.getRandom(1,2)); double multi = AdditionalFunctions.getRandom(100,1000,2);
+        if(AdditionalFunctions.getRandom(0,10)==0)multi*=AdditionalFunctions.getRandom(1,10);
+        if(getValue()-multi<=0)pow=1;
+        setValue(getValue()+(multi*pow));
         if(getMax()<getValue())max=value;
         if(getMin()>getValue())min=value;
         //MOZLIWE ZE KOLEJNE DWA WERSY SA DO WYWALENIA
@@ -125,11 +126,10 @@ public class Company extends Goods implements Runnable{
         while(true)
         {
             try{
-                sleep(500);
+                sleep(5000);
             }
             catch (Exception e){}
             work();
-
         }
 
     }

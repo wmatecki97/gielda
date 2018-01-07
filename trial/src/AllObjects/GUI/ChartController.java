@@ -47,6 +47,7 @@ public class ChartController implements Initializable {
     private ListView<ChartLine> listView;
 
     private void loadData(){
+
         list = MenuFunctionality.getChartList();
 
         if(list.size()>0){

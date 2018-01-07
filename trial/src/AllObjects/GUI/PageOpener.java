@@ -52,62 +52,60 @@ public class PageOpener {
 
     }
 
-    public static void startPage(){
+    public synchronized static void startPage(){
 
         open("StartPageView.fxml", "Wybierz akcję", true);
 
     }
 
-
-    public static void displayPage(){
+    public synchronized static void displayPage(){
         open("DisplayPageView.fxml", "Wyświetl dane", 450, 300, true);
     }
 
-    public static void emptyGenerator(){
+    public synchronized static void emptyGenerator(){
         open("EmptyGeneratorPopUp.fxml", "Błąd", 150, 600, false);
     }
 
-    public static void addPage(){
+    public synchronized static void addPage(){
         open("AddPageView.fxml", "Dodaj nowe obiekty", 375, 300, false);
     }
 
-    public static void investorPage(){
+    public synchronized static void investorPage(){
         open("DisplayTemplates/InvestorView.fxml", "Inwestorzy", 400, 500, false);
     }
 
-    public static void investmentFundPage(){
+    public synchronized static void investmentFundPage(){
         open("DisplayTemplates/InvestmentFundView.fxml", "Fundusze inwestycyjne", 400, 500, false);
     }
 
-    public static void companyPage(){
+    public synchronized static void companyPage(){
         open("./DisplayTemplates/CompanyView.fxml", "Spółki", 400, 1300, false);
     }
 
-    public static void currencyPage(){
+    public synchronized static void currencyPage(){
         open("./DisplayTemplates/CurrencyView.fxml", "Waluty", 400, 800, false);
     }
 
-    public static void exchangePage(){
+    public synchronized static void exchangePage(){
         open("./DisplayTemplates/ExchangeView.fxml", "Giełdy", 400, 1300, false);
     }
 
-    public static void rawMaterialPage(){open("./DisplayTemplates/RawMaterialView.fxml", "Surowce", 400, 800, false);
+    public synchronized static void rawMaterialPage(){open("./DisplayTemplates/RawMaterialView.fxml", "Surowce", 400, 800, false);
     }
 
-    public static void detailsInvestor(){
+    public synchronized static void detailsInvestor(){
         open("./DisplayTemplates/DetailedView/Investor.fxml", "Szczegóły inwestora", 500, 400, false);
     }
 
-    public static void detailsInvestmentFund(){
+    public synchronized static void detailsInvestmentFund(){
         open("./DisplayTemplates/DetailedView/InvestmentFund.fxml", "Szczegóły funduszu inwestycyjnego", 550, 400, false);
     }
 
-
-    public static void detailsCompany() {
+    public synchronized static void detailsCompany() {
         open("./DisplayTemplates/DetailedView/Company.fxml", "Szczegóły funduszu inwestycyjnego", 450, 627, false);
     }
 
-    public static void chart() {
+    public synchronized static void chart() {
         open("./Chart.fxml", "Wykres", 450, 775, false);
 
     }

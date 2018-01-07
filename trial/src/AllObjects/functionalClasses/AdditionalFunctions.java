@@ -108,11 +108,6 @@ public class AdditionalFunctions {
         return getRandom(min*exponent, max*exponent)/exponent;
     }
 
-    public static Exchange getRandomExchange(){
-
-        return MenuFunctionality.getRandomExchange();
-
-    }
 
     public static AllInstancess getRandomGood(){
 

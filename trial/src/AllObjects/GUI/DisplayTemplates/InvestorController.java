@@ -49,8 +49,9 @@ public class InvestorController implements Initializable {
         tableView.getColumns().addAll(nameColumn, surnameColumn, budgetColumn,  peselColumn);
         ObservableList<Investor> data = tableView.getItems();
         List<Investor> list =  MenuFunctionality.getInvestorList();
-        for(int i=-0; i<list.size(); i++){
-            data.add((Investor)list.get(i));
+
+        for(Investor investor: list){
+            data.add(investor);
         }
 
         tableView.setRowFactory( tv -> {

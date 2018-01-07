@@ -23,7 +23,6 @@ public class Exchange extends Market implements AllInstancess {
     public Exchange(){
 
         indexList = new ArrayList<String>();
-        goodsList =new ArrayList<>();
         name = DataGenerator.getExchangeName();
         country = DataGenerator.getCountry();
         List<Goods> curList = MenuFunctionality.getCurrencyList();

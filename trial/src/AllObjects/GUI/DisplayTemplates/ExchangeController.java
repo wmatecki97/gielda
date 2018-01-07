@@ -47,8 +47,9 @@ public class ExchangeController implements Initializable {
         tableView.getColumns().addAll(nameColumn, countryColumn, currencyColumn, cityColumn, adressColumn, markupColumn, goodsColumn);
         ObservableList<Exchange> data = tableView.getItems();
         List<AllInstancess> list = MenuFunctionality.getExchangeList();
-        for (int i = -0; i < list.size(); i++) {
-            data.add((Exchange) list.get(i));
+
+        for(AllInstancess exc: list){
+            data.add((Exchange) exc);
         }
 
 

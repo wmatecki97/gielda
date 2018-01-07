@@ -82,7 +82,7 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
     protected synchronized void buy(){
 
         if(budget>=1)
-            MenuFunctionality.getrandomMarket().buy(this ,AdditionalFunctions.getRandom(1,(int)budget,2) );
+            MenuFunctionality.buyOnRandomMarket(this ,AdditionalFunctions.getRandom(1,(int)budget,2) );
     }
 
     public synchronized void display(){

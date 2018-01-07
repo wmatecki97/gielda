@@ -106,6 +106,8 @@ public class CompanyDetails implements Initializable{
         MenuFunctionality.addChartLine(company);
         addToChart.visibleProperty().bind(new SimpleBooleanProperty(false));
         deleteFromChart.visibleProperty().bind(new SimpleBooleanProperty(true));
+        Stage stage = (Stage) deleteItem.getScene().getWindow();
+        stage.close();
     }
 
     public void deleteFromChart(ActionEvent actionEvent) {
@@ -113,6 +115,8 @@ public class CompanyDetails implements Initializable{
         MenuFunctionality.deleteChartLine(company.getId());
         deleteFromChart.visibleProperty().bind(new SimpleBooleanProperty(false));
         addToChart.visibleProperty().bind(new SimpleBooleanProperty(true));
+        Stage stage = (Stage) deleteItem.getScene().getWindow();
+        stage.close();
 
     }
 }

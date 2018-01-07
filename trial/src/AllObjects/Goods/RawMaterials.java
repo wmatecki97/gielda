@@ -31,7 +31,6 @@ public class RawMaterials extends Goods{
         }
     }
 
-
     public synchronized void display(){
         System.out.println(" nazwa: " + name + " jednostka: " + unit + " waluta: " + currency + " wartosc: " + value + "minimalna wartosc: " + min + " maksymalna wartosc: " + max);
     }

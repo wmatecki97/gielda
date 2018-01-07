@@ -17,8 +17,10 @@ public class Market {
     }
 
     public synchronized void buy(InvestmentFund client, double cost){
-        Goods subject = getRandomGood();
-        buy(client, subject, cost);
+        Goods subject;
+        synchronized (subject = getRandomGood()){
+            buy(client, subject, cost);
+        }
     }
 
     public List<Goods> getGoodsList() {

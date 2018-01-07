@@ -47,8 +47,8 @@ public class RawMaterialController implements Initializable {
         tableView.getColumns().addAll(nameColumn, unitColumn, currencyColumn, valueColumn, minColumn, maxColumn);
         ObservableList<RawMaterials> data = tableView.getItems();
         List<Goods> list = MenuFunctionality.getRawMaterialList();
-        for (int i = -0; i < list.size(); i++) {
-            data.add((RawMaterials) list.get(i));
+        for(Goods good: list){
+            data.add((RawMaterials) good);
         }
 
     }
