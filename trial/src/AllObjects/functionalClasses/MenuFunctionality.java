@@ -65,16 +65,16 @@ public class MenuFunctionality {
 
     //block is synchronized
     public static void addNewInvestor() {
-        Investor inv = new Investor();
         synchronized (investorList) {
+            Investor inv = new Investor();
             investorList.add(inv);
             Thread t = new Thread(inv);
             t.start();
         }
     }
     public static void addNewInvestmentFund() {
-        InvestmentFund inv = new InvestmentFund();
         synchronized (investmentFundList){
+            InvestmentFund inv = new InvestmentFund();
             investmentFundList.add(inv);
             Thread t = new Thread(inv);
             t.start();
@@ -82,8 +82,8 @@ public class MenuFunctionality {
 
     }
     public static void addNewCompany() {
-        Company c = new Company();
         synchronized (companyList){
+            Company c = new Company();
             companyList.add(c);
             addCompanyToExchanges(c);
             Thread t = new Thread(c);
@@ -91,17 +91,17 @@ public class MenuFunctionality {
         }
     }
     public static void addNewCurrency() {
-        Currency c = new Currency();
         synchronized (currencyList){
+            Currency c = new Currency();
             currencyList.add(c);
         }
     }
     public static void addNewExchange() {
-        Exchange e = new Exchange();
         synchronized (exchangeList){
             synchronized (currencyList){
                 synchronized (companyList){
                     synchronized (rawMaterialList){
+                        Exchange e = new Exchange();
                         exchangeList.add(e);
                     }
                 }
@@ -109,9 +109,12 @@ public class MenuFunctionality {
         }
     }
     public static void addNewRawMaterial() {
-        RawMaterials r = new RawMaterials();
         synchronized (rawMaterialList){
-            rawMaterialList.add(r);
+            synchronized (currencyList){
+                RawMaterials r = new RawMaterials();
+                rawMaterialList.add(r);
+            }
+
         }
     }
 
@@ -164,16 +167,39 @@ public class MenuFunctionality {
         }
     }
 
+    public static Purchase buyParticipationUnits(Double price){
+        synchronized (investmentFundList){
+            InvestmentFund fund = investmentFundList.get(AdditionalFunctions.getRandom(0,investmentFundList.size()-1));
+            return fund.buyPurchases(price);
+        }
+
+    }
+
     public static void buyOnRandomMarket(InvestmentFund client, double cost) {
 
-        Market randomMarket;
-        int rand = AdditionalFunctions.getRandom(0, 2);
-        if (rand == 0) randomMarket = (Market) currencyMarket;
-        if (rand == 1) randomMarket = (Market) rawMaterialsMarket;
-        else randomMarket = (Market) exchangeList.get(AdditionalFunctions.getRandom(0, exchangeList.size() - 1));
-        synchronized (randomMarket){
-            randomMarket.buy(client, cost);
+        synchronized (client){
+            synchronized (currencyMarket){
+                synchronized (rawMaterialsMarket){
+                    synchronized (exchangeList){
+                        Market randomMarket;
+                        int rand = AdditionalFunctions.getRandom(0, 2);
+                        if (rand == 0) randomMarket = (Market) currencyMarket;
+                        if (rand == 1) randomMarket = (Market) rawMaterialsMarket;
+                        else randomMarket = (Market) exchangeList.get(AdditionalFunctions.getRandom(0, exchangeList.size() - 1));
+                        synchronized (currencyList){
+                            synchronized (companyList){
+                                synchronized (rawMaterialList){
+                                    randomMarket.buy(client, cost);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
+
+
+
     }//is good
 
     public static AllInstancess getDisplayedObject() {

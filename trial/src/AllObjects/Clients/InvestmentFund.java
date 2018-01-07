@@ -29,13 +29,12 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
 
     public synchronized Purchase buyPurchases(double price){
 
-        List<Double> pList = new ArrayList<>();
-        pList.add(price); pList.add(getCurrentValue());
-        double temp = price%getCurrentValue();pList.add(temp);
-        price = price-temp;pList.add(price);pList.add(getCurrentValue());
+        double temp = price%getCurrentValue();
+        price = price-temp;
         Purchase unit = new Purchase(getId(),price/getCurrentValue());
         unitsSold+=(int) price/currentValue;
-        budget=budget+price;
+        if(budget<1000000000)
+            budget=budget+price;
         return unit;
 
     }
@@ -47,7 +46,7 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
         while(true)
         {
             try{
-                sleep(5000);
+                sleep(500);
             }
             catch (Exception e){}
             buy();

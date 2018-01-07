@@ -3,6 +3,7 @@ package AllObjects.functionalClasses;
 import AllObjects.Clients.Client;
 import AllObjects.Market.Exchange;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -102,10 +103,10 @@ public class AdditionalFunctions {
 
     public static double getRandom(int min, int max, int precission){
 
-
         if(precission>9)precission=9;
         int exponent = (int)pow(10.0, (double)precission+1);
-        return getRandom(min*exponent, max*exponent)/exponent;
+        return getRandom(min, max)+getRandom(0,exponent)/exponent;
+
     }
 
 

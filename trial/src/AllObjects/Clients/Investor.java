@@ -25,7 +25,7 @@ public class Investor extends Client implements AllInstancess, Runnable{
         while(true)
         {
             try{
-                sleep(5000);
+                sleep(500);
             }
             catch (Exception e){}
             buy();
@@ -45,14 +45,9 @@ public class Investor extends Client implements AllInstancess, Runnable{
         if(budget>1){
             Double price = new Double(AdditionalFunctions.getRandom(1,(int)budget,2));
             int index =AdditionalFunctions.getRandom(0,MenuFunctionality.getInvestmentFundList().size()-1);
-            InvestmentFund fund = MenuFunctionality.getInvestmentFundList().get(index);
-            purchaseList.add(fund.buyPurchases(price));
+            purchaseList.add(MenuFunctionality.buyParticipationUnits(price));
+            budget-=price;
 
-            budget-=price; //NOT TEST
-
-            if(budget<0)
-                fund.getCurrentValue();
-        //TEST
         }
     }
 

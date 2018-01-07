@@ -35,15 +35,15 @@ public class Market {
 
         double budget = client.getBudget();
 
-        client.setBudget(budget-cost-markupValue);
+//        client.setBudget(budget-cost-markupValue);
 
-        client.addToPurchasesList(purchase);
+//        client.addToPurchasesList(purchase);
 
         //System.out.println(purchase.getClientId() + " "+ purchase.getSubjectId());
 
     }
 
-    protected synchronized Goods getRandomGood(){
+    public synchronized Goods getRandomGood(){
         return (Goods)goodsList.get(AdditionalFunctions.getRandom(0,goodsList.size()-1));
     }
 
