@@ -3,10 +3,12 @@ package AllObjects.Goods;
 import AllObjects.GUI.PageOpener;
 import AllObjects.functionalClasses.AdditionalFunctions;
 import AllObjects.functionalClasses.DataGenerator.DataGenerator;
+import AllObjects.functionalClasses.MenuFunctionality;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Currency extends Goods {
+public class Currency extends Goods implements Serializable {
 
     private List<String> countries;
 
@@ -21,7 +23,8 @@ public class Currency extends Goods {
             countriesList = AdditionalFunctions.ListToString(countries);
         }
         catch(Exception e){
-            PageOpener.emptyGenerator();
+            MenuFunctionality.setErrorMessage("Nie można dodać więcej obiektów tego typu");
+            PageOpener.popUp();
         }
     }
 

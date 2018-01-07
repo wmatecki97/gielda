@@ -5,7 +5,9 @@ import AllObjects.functionalClasses.AdditionalFunctions;
 import AllObjects.functionalClasses.DataGenerator.DataGenerator;
 import AllObjects.functionalClasses.MenuFunctionality;
 
-public class RawMaterials extends Goods{
+import java.io.Serializable;
+
+public class RawMaterials extends Goods implements Serializable{
 
     private String unit;
     private int currencyId;
@@ -27,7 +29,8 @@ public class RawMaterials extends Goods{
         }
         catch (NullPointerException e)
         {
-            PageOpener.emptyGenerator();
+            MenuFunctionality.setErrorMessage("Nie można dodać więcej obiektów tego typu");
+            PageOpener.popUp();
         }
     }
 

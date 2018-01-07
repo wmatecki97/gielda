@@ -4,6 +4,7 @@ package AllObjects.Goods;
 import AllObjects.functionalClasses.AdditionalFunctions;
 import AllObjects.functionalClasses.DataGenerator.DataGenerator;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,7 +13,7 @@ import static AllObjects.functionalClasses.AdditionalFunctions.split;
 import static java.lang.Thread.sleep;
 import java.util.List;
 
-public class Company extends Goods implements Runnable{
+public class Company extends Goods implements Runnable, Serializable{
 
     private Date date;
     private double min;
@@ -28,6 +29,72 @@ public class Company extends Goods implements Runnable{
     private double turnover;
     private double lastActionsLeftValue;
     private List<Double> valueList;
+
+    protected boolean running;
+
+    public void terminate(){running=false;}
+
+    public Company(){
+        setName(DataGenerator.getName());
+        setDate(DataGenerator.getDate());
+        setOpeningValue(getRandom(100,10000,2));
+        setValue(getOpeningValue());
+        setMin(getOpeningValue());
+        setMax(getOpeningValue());
+
+        setnumberOfActions(getRandom(0,2000));
+        setActionsLeft(getNumberOfActions());
+        setIncome(getRandom(0,100000,2));
+        setProfit(getRandom((int)income, 100000,2));
+        setIndividualCapital(income*getRandom(5,20));
+        setFactoryCapital(individualCapital*getRandom(50,200)/100);
+
+        //volume do ustawienia!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        setTurnover(income*12*getRandom(0,200)/100);
+        setValueList(new ArrayList<Double>());
+        addToValueList(getValue());
+        setLastActionsLeftValue(getValue());
+        running=true;
+    }
+
+    @Override
+    public void run() {
+
+        while(running)
+        {
+            try{
+                sleep(5000);
+            }
+            catch (Exception e){}
+            work();
+        }
+
+    }
+
+    private synchronized void work(){
+        double temp = getValue();
+        double pow = Math.pow(-1, (double)AdditionalFunctions.getRandom(1,2)); double multi = AdditionalFunctions.getRandom(100,1000,2);
+        if(AdditionalFunctions.getRandom(0,10)==0)multi*=AdditionalFunctions.getRandom(1,10);
+        if(getValue()-multi<=0)pow=1;
+        setValue(getValue()+(multi*pow));
+        if(getMax()<getValue())max=value;
+        if(getMin()>getValue())min=value;
+        //MOZLIWE ZE KOLEJNE DWA WERSY SA DO WYWALENIA
+        setLastActionsLeftValue(temp);
+        lastActionsLeftValue = temp;
+        income = getRandom(0,100000,2);
+        profit = getRandom((int)income, 100000,2);
+        if(getRandom(0,10)==0)
+        {
+            int number = getRandom(0,1000);
+            numberOfActions+=number;
+            actionsLeft += number;
+        }
+        valueList.add(value);
+
+    }
+
+
 
     public synchronized int getNumberOfActions() {
         return numberOfActions;
@@ -76,63 +143,7 @@ public class Company extends Goods implements Runnable{
         this.max = max;
     }
 
-    public Company(){
-        setName(DataGenerator.getName());
-        setDate(DataGenerator.getDate());
-        setOpeningValue(getRandom(100,10000,2));
-        setValue(getOpeningValue());
-        setMin(getOpeningValue());
-        setMax(getOpeningValue());
 
-        setnumberOfActions(getRandom(0,2000));
-        setActionsLeft(getNumberOfActions());
-        setIncome(getRandom(0,100000,2));
-        setProfit(getRandom((int)income, 100000,2));
-        setIndividualCapital(income*getRandom(5,20));
-        setFactoryCapital(individualCapital*getRandom(50,200)/100);
-
-        //volume do ustawienia!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        setTurnover(income*12*getRandom(0,200)/100);
-        setValueList(new ArrayList<Double>());
-        addToValueList(getValue());
-        setLastActionsLeftValue(getValue());
-    }
-
-    private synchronized void work(){
-        double temp = getValue();
-        double pow = Math.pow(-1, (double)AdditionalFunctions.getRandom(1,2)); double multi = AdditionalFunctions.getRandom(100,1000,2);
-        if(AdditionalFunctions.getRandom(0,10)==0)multi*=AdditionalFunctions.getRandom(1,10);
-        if(getValue()-multi<=0)pow=1;
-        setValue(getValue()+(multi*pow));
-        if(getMax()<getValue())max=value;
-        if(getMin()>getValue())min=value;
-        //MOZLIWE ZE KOLEJNE DWA WERSY SA DO WYWALENIA
-        setLastActionsLeftValue(temp);
-        lastActionsLeftValue = temp;
-        income = getRandom(0,100000,2);
-        profit = getRandom((int)income, 100000,2);
-        if(getRandom(0,10)==0)
-        {
-            int number = getRandom(0,1000);
-            numberOfActions+=number;
-            actionsLeft += number;
-        }
-        valueList.add(value);
-    }
-
-    @Override
-    public void run() {
-
-        while(true)
-        {
-            try{
-                sleep(5000);
-            }
-            catch (Exception e){}
-            work();
-        }
-
-    }
 
 
 

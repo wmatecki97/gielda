@@ -6,12 +6,13 @@ import AllObjects.functionalClasses.AllInstancess;
 import AllObjects.functionalClasses.DataGenerator.DataGenerator;
 import AllObjects.functionalClasses.MenuFunctionality;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Thread.sleep;
 
-public class Investor extends Client implements AllInstancess, Runnable{
+public class Investor extends Client implements AllInstancess, Runnable, Serializable {
     private String PESEL;
 
     public Investor(){
@@ -22,10 +23,10 @@ public class Investor extends Client implements AllInstancess, Runnable{
 
     @Override
     public void run() {
-        while(true)
+        while(running)
         {
             try{
-                sleep(500);
+                sleep(5000);
             }
             catch (Exception e){}
             buy();

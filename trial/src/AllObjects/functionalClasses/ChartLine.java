@@ -2,10 +2,11 @@ package AllObjects.functionalClasses;
 
 import javafx.scene.chart.Chart;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChartLine {
+public class ChartLine implements Serializable {
 
     private String name;
     private int id;

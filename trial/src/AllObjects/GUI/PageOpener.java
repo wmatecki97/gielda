@@ -62,8 +62,8 @@ public class PageOpener {
         open("DisplayPageView.fxml", "Wyświetl dane", 450, 300, true);
     }
 
-    public synchronized static void emptyGenerator(){
-        open("EmptyGeneratorPopUp.fxml", "Błąd", 150, 600, false);
+    public synchronized static void popUp(){
+        open("EmptyGeneratorPopUp.fxml", "", 150, 600, false);
     }
 
     public synchronized static void addPage(){

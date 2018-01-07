@@ -8,12 +8,13 @@ import AllObjects.functionalClasses.DataGenerator.DataGenerator;
 import AllObjects.functionalClasses.HasName;
 import AllObjects.functionalClasses.MenuFunctionality;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Thread.sleep;
 
-public class InvestmentFund extends Client implements AllInstancess, HasName, Runnable{
+public class InvestmentFund extends Client implements AllInstancess, HasName, Runnable, Serializable {
 
     private String name;
     private double currentValue;
@@ -40,13 +41,14 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
     }
 
 
+
     @Override
     public void run() {
 
-        while(true)
+        while(running)
         {
             try{
-                sleep(500);
+                sleep(5000);
             }
             catch (Exception e){}
             buy();

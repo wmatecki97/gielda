@@ -33,6 +33,7 @@ public class Main extends Application {
     private static void setFewStartObjects(){
 
         MenuFunctionality.addNewCurrency();
+        MenuFunctionality.setDisplayedObject(MenuFunctionality.getCurrencyList().get(0));MenuFunctionality.releaseDisplayedObjectSemaphore();
         MenuFunctionality.addNewCurrency();
         MenuFunctionality.addNewCurrency();
         MenuFunctionality.addNewCompany();

@@ -1,5 +1,6 @@
 package AllObjects.GUI;
 
+import AllObjects.functionalClasses.MenuFunctionality;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,5 +46,13 @@ public class StartPageController{
 
     public void chartAction(ActionEvent actionEvent) {
         PageOpener.chart();
+    }
+
+    public void saveAction(ActionEvent actionEvent) {
+            MenuFunctionality.save();
+    }
+
+    public void readAction(ActionEvent actionEvent) {
+        MenuFunctionality.read();
     }
 }

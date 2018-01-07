@@ -8,10 +8,11 @@ import AllObjects.functionalClasses.AllInstancess;
 import AllObjects.functionalClasses.DataGenerator.DataGenerator;
 import AllObjects.functionalClasses.MenuFunctionality;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Exchange extends Market implements AllInstancess {
+public class Exchange extends Market implements AllInstancess, Serializable {
     private String name;
     private String country;
     private String currency;

@@ -4,6 +4,7 @@ import AllObjects.*;
 import AllObjects.Clients.Client;
 import AllObjects.Clients.InvestmentFund;
 import AllObjects.Clients.Investor;
+import AllObjects.GUI.PageOpener;
 import AllObjects.Goods.Company;
 import AllObjects.Goods.Currency;
 import AllObjects.Goods.Goods;
@@ -15,11 +16,13 @@ import AllObjects.Market.RawMaterialsMarket;
 import com.sun.xml.internal.bind.v2.runtime.unmarshaller.ValuePropertyLoader;
 
 
-import java.io.CharArrayReader;
+import java.io.*;
 import java.time.temporal.ValueRange;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
+
+import static java.lang.Thread.sleep;
 
 public class MenuFunctionality {
 
@@ -34,10 +37,9 @@ public class MenuFunctionality {
     static RawMaterialsMarket rawMaterialsMarket;
     static AllInstancess displayedObject;
     static List<Integer> chartList;
+    static String errorMessage;
 
     static Semaphore displaysemaphore;
-    static Semaphore chartSemaphore;//semaphore to wait when chart window is gathering and processing data
-
 
     public static void initialize() {
 
@@ -56,9 +58,10 @@ public class MenuFunctionality {
         exchangeList = new ArrayList<>();
         shareIndexList = new ArrayList<>();
         chartList = new ArrayList<>();
+        errorMessage="";
+        displayedObject=null;
 
         displaysemaphore = new Semaphore(1);
-        chartSemaphore = new Semaphore(1);
 
     }
 
@@ -70,6 +73,7 @@ public class MenuFunctionality {
             investorList.add(inv);
             Thread t = new Thread(inv);
             t.start();
+
         }
     }
     public static void addNewInvestmentFund() {
@@ -139,6 +143,149 @@ public class MenuFunctionality {
     public static List<ShareIndex> getShareIndexList() {
         return shareIndexList;
     }
+    public static CurrencyMarket getCurrencyMarket() {
+        return currencyMarket;
+    }
+    public static RawMaterialsMarket getRawMaterialsMarket() {
+        return rawMaterialsMarket;
+    }
+    public static Semaphore getDisplaysemaphore() {
+        return displaysemaphore;
+    }
+    public static List<Integer> getChartList() {
+        return chartList;
+    }
+    public static String getErrorMessage() {
+        synchronized (errorMessage){
+            return errorMessage;
+        }
+
+    }
+    public static AllInstancess getDisplayedObject() {
+        return displayedObject;
+    }//is synchronized
+
+    public static void save(){
+        synchronized (investorList){
+            synchronized (investmentFundList){
+                synchronized (companyList){
+                    synchronized (currencyList){
+                        synchronized (exchangeList){
+                            synchronized (rawMaterialList){
+                                synchronized (shareIndexList){
+                                    synchronized (currencyMarket){
+                                        synchronized (rawMaterialsMarket){
+                                            synchronized (displaysemaphore){
+                                                synchronized (chartList){
+                                                    synchronized (errorMessage){
+                                                        synchronized (displayedObject){
+                                                            SaveRead save =new SaveRead();
+                                                            try{
+                                                                ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("zapis.bin"));
+                                                                os.writeObject(save);
+                                                                os.close();
+                                                                errorMessage="Pomyślnie zapisano";
+                                                                PageOpener.popUp();
+                                                            } catch (FileNotFoundException e) {
+                                                                errorMessage="Nie znaleziono zapisu";
+                                                                PageOpener.popUp();
+                                                            } catch (IOException e) {
+                                                                errorMessage="Wystąpił problem podczas zapisu";
+                                                                PageOpener.popUp();
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public static void read(){
+        synchronized (investorList){
+            synchronized (investmentFundList){
+                synchronized (companyList){
+                    synchronized (currencyList){
+                        synchronized (exchangeList){
+                            synchronized (rawMaterialList){
+                                synchronized (shareIndexList){
+                                    synchronized (currencyMarket){
+                                        synchronized (rawMaterialsMarket){
+                                            synchronized (displaysemaphore){
+                                                synchronized (chartList){
+                                                    synchronized (errorMessage){
+                                                        synchronized (displayedObject) {
+                                                            try {
+                                                                ObjectInputStream is = new ObjectInputStream(new FileInputStream("zapis.bin"));
+                                                                SaveRead save = (SaveRead) is.readObject();
+                                                                is.close();
+
+                                                                for (Company company : companyList) company.terminate();
+                                                                for (InvestmentFund investmentFund : investmentFundList)
+                                                                    investmentFund.terminate();
+                                                                for (Investor investor : investorList)
+                                                                    investor.terminate();
+
+                                                                investorList = save.getInvestorList();
+                                                                investmentFundList = save.getInvestmentFundList();
+                                                                companyList = save.getCompanyList();
+                                                                currencyList = save.getCurrencyList();
+                                                                exchangeList = save.getExchangeList();
+                                                                rawMaterialList = save.getRawMaterialList();
+                                                                shareIndexList = save.getShareIndexList();
+                                                                currencyMarket = save.getCurrencyMarket();
+                                                                rawMaterialsMarket = save.getRawMaterialsMarket();
+                                                                displayedObject = save.getDisplayedObject();
+                                                                chartList = save.getChartList();
+                                                                errorMessage = save.getErrorMessage();
+
+                                                                for (Company company : companyList)
+                                                                    new Thread(company).start();
+                                                                for (InvestmentFund investmentFund : investmentFundList)
+                                                                    new Thread(investmentFund).start();
+                                                                for (Investor investor : investorList)
+                                                                    new Thread(investor).start();
+
+                                                                displaysemaphore = save.getDisplaysemaphore();
+                                                                errorMessage = "Pomyślnie wczytano";
+                                                                PageOpener.popUp();
+                                                            } catch (FileNotFoundException e) {
+                                                                errorMessage = "Nie znaleziono zapisu";
+                                                                PageOpener.popUp();
+                                                            } catch (IOException e) {
+                                                                errorMessage = "Wystąpił problem podczas odczytu";
+                                                                PageOpener.popUp();
+                                                            } catch (ClassNotFoundException e) {
+                                                                e.printStackTrace();
+                                                            }
+
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public static void setErrorMessage(String errorMessage) {
+        synchronized (errorMessage){
+            MenuFunctionality.errorMessage = errorMessage;
+        }
+    }
 
     public static void addCompanyToExchanges(Goods g) {
         synchronized (exchangeList){
@@ -202,9 +349,6 @@ public class MenuFunctionality {
 
     }//is good
 
-    public static AllInstancess getDisplayedObject() {
-        return displayedObject;
-    }//is synchronized
     public static void releaseDisplayedObjectSemaphore() {
         displaysemaphore.release();
     }//is synchronized
@@ -215,6 +359,10 @@ public class MenuFunctionality {
         }
         MenuFunctionality.displayedObject = displayedObject;
     }//is synchronized
+
+    public static void releaseDisplaySemaphore(){
+        displaysemaphore.release();
+    }
 
     public static HasName getGood(int id) {
         synchronized (companyList) {
@@ -324,7 +472,9 @@ public class MenuFunctionality {
         }
 
     }
-    public static List<ChartLine> getChartList() {
+
+
+    public static List<ChartLine> getChartIdList() {
         List<ChartLine> chartItemList = new ArrayList<>();
         synchronized (chartList) {
             for (int id : chartList) {

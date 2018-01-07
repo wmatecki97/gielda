@@ -1,81 +1,98 @@
 package AllObjects.functionalClasses;
 
+import AllObjects.Clients.InvestmentFund;
+import AllObjects.Clients.Investor;
+import AllObjects.Goods.Company;
+import AllObjects.Goods.Goods;
+import AllObjects.Market.CurrencyMarket;
+import AllObjects.Market.RawMaterialsMarket;
+import AllObjects.ShareIndex;
+
 import java.io.*;
 import java.util.List;
+import java.util.concurrent.Semaphore;
 
-public class SaveRead {
+public class SaveRead implements Serializable{
 
+    private List<Investor> investorList;
+    private List<InvestmentFund> investmentFundList;
+    private List<Company> companyList;
+    private List<Goods> currencyList;
+    private List<AllInstancess> exchangeList;
+    private List<Goods> rawMaterialList;
+    private List<ShareIndex> shareIndexList;
+    private CurrencyMarket currencyMarket;
+    private RawMaterialsMarket rawMaterialsMarket;
+    private AllInstancess displayedObject;
+    private List<Integer> chartList;
+    private String errorMessage;
+    private Semaphore displaysemaphore;
 
-    private static String getPath(AllInstancess instance){
-        return instance.getClass().getSimpleName()+ ".txt";
+    public SaveRead() {
+        investorList=MenuFunctionality.getInvestorList();
+        investmentFundList=MenuFunctionality.getInvestmentFundList();
+        companyList=MenuFunctionality.getCompanyList();
+        currencyList=MenuFunctionality.getCurrencyList();
+        exchangeList=MenuFunctionality.getExchangeList();
+        rawMaterialList=MenuFunctionality.getRawMaterialList();
+        shareIndexList=MenuFunctionality.getShareIndexList();
+        currencyMarket=MenuFunctionality.getCurrencyMarket();
+        rawMaterialsMarket=MenuFunctionality.getRawMaterialsMarket();
+        displayedObject=MenuFunctionality.getDisplayedObject();
+        chartList=MenuFunctionality.getChartList();
+        errorMessage=MenuFunctionality.getErrorMessage();
+        displaysemaphore=new Semaphore(1);
     }
 
-    public static void save(List<AllInstancess> instance){
-
-        FileWriter fw = null;
-        if(!instance.isEmpty())
-        {
-            String path = getPath(instance.get(0));    //opening file to write
-            try {
-                fw = new FileWriter(path);
-            } catch (IOException e) {
-                System.out.println("blad otwarcia pliku");
-            }
-
-            String output;
-            BufferedWriter bw = new BufferedWriter(fw);  //writing to a file
-
-            for(AllInstancess object: instance)
-            {
-                output = object.getOutputString();  //getting output string
-
-                try {
-                    bw.write(output);
-                    bw.newLine();
-                } catch (IOException e) {
-                    System.out.println("blad podczas zapisywania do pliku");
-                }
-
-
-            }
-            try {                                       //closing file
-                bw.close();
-                fw.close();
-            } catch (IOException e) {
-                System.out.println("blad podczas zamykania pliku");
-            }
-
-        }
+    public List<Investor> getInvestorList() {
+        return investorList;
     }
 
-    public static void read(List<AllInstancess> outputList, AllInstancess instance){
-
-        FileReader fr = null;
-
-
-        String path = getPath(instance);
-        File f = new File(path);
-        if(f.exists() && !f.isDirectory())
-        {
-            try {                                           //opening file to read
-                fr = new FileReader(path);
-            } catch (IOException e) {
-                System.out.println("blad otwarcia pliku");
-            }
-            String line;
-            try{
-                BufferedReader br = new BufferedReader(fr);
-
-                while((line = br.readLine()) != null){              // reading whole file
-                    AllInstancess temp = instance.setValues(line);  // sending read line to a right class function which returns an object of this class
-                    outputList.add(temp);
-                }
-            }
-            catch (IOException e){
-                System.out.println("blad zapisu do pliku");
-            }
-        }
+    public List<InvestmentFund> getInvestmentFundList() {
+        return investmentFundList;
     }
 
+    public List<Company> getCompanyList() {
+        return companyList;
+    }
 
+    public List<Goods> getCurrencyList() {
+        return currencyList;
+    }
+
+    public List<AllInstancess> getExchangeList() {
+        return exchangeList;
+    }
+
+    public List<Goods> getRawMaterialList() {
+        return rawMaterialList;
+    }
+
+    public List<ShareIndex> getShareIndexList() {
+        return shareIndexList;
+    }
+
+    public CurrencyMarket getCurrencyMarket() {
+        return currencyMarket;
+    }
+
+    public RawMaterialsMarket getRawMaterialsMarket() {
+        return rawMaterialsMarket;
+    }
+
+    public AllInstancess getDisplayedObject() {
+        return displayedObject;
+    }
+
+    public List<Integer> getChartList() {
+        return chartList;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public Semaphore getDisplaysemaphore() {
+        return displaysemaphore;
+    }
 }

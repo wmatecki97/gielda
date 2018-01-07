@@ -2,7 +2,9 @@ package AllObjects.functionalClasses;
 
 import AllObjects.functionalClasses.MenuFunctionality;
 
-public class Purchase {
+import java.io.Serializable;
+
+public class Purchase implements Serializable{
 
     private double amount;
     private int subjectId;

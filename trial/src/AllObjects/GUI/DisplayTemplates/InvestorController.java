@@ -67,8 +67,6 @@ public class InvestorController implements Initializable {
             });
             return row ;
         });
-
-
     }
 
 

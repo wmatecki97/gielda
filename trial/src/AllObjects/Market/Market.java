@@ -5,9 +5,10 @@ import AllObjects.Goods.Goods;
 import AllObjects.functionalClasses.Purchase;
 import AllObjects.functionalClasses.AdditionalFunctions;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Market {
+public class Market implements Serializable{
 
     protected List<Goods> goodsList;
     protected double markup;

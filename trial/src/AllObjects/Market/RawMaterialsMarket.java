@@ -4,10 +4,11 @@ import AllObjects.Goods.Goods;
 import AllObjects.Goods.RawMaterials;
 import AllObjects.functionalClasses.MenuFunctionality;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RawMaterialsMarket extends Market {
+public class RawMaterialsMarket extends Market implements Serializable {
 
 
     public RawMaterialsMarket(){
