@@ -96,6 +96,6 @@ public class RawMaterialsDetails implements Initializable {
 
 
     public void showChart(ActionEvent actionEvent) {
-        MenuFunctionality.replaceChartList(material.getId());
+        MenuFunctionality.displayOneObjechChart(material.getId());
     }
 }

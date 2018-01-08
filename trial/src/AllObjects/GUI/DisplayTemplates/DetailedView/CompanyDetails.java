@@ -144,6 +144,6 @@ public class CompanyDetails implements Initializable{
     }
 
     public void showChart(ActionEvent actionEvent) {
-        MenuFunctionality.replaceChartList(company.getId());
+        MenuFunctionality.displayOneObjechChart(company.getId());
     }
 }

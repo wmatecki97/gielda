@@ -108,6 +108,6 @@ public class InvestmentFundDetails implements Initializable {
     }
 
     public void showChart(ActionEvent actionEvent) {
-        MenuFunctionality.replaceChartList(investor.getId());
+        MenuFunctionality.displayOneObjechChart(investor.getId());
     }
 }

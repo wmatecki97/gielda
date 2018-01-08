@@ -680,7 +680,11 @@ public class MenuFunctionality {
        }
     }
 
-    public static void replaceChartList(int id){
+    /**
+     * display one object in chart
+     * @param id
+     */
+    public static void displayOneObjechChart(int id){
         synchronized (chartList){
             synchronized (isDetailedInformationChartVisible){
                 List<Integer> replacedChartList = new ArrayList<>();
@@ -694,6 +698,7 @@ public class MenuFunctionality {
         }
 
     }
+
 
     public static void setIsDetailedInformationChartVisible(boolean isDetailedInformationChartVisible) {
         MenuFunctionality.isDetailedInformationChartVisible = isDetailedInformationChartVisible;

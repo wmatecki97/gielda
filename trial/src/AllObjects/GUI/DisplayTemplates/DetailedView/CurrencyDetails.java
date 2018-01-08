@@ -95,6 +95,6 @@ public class CurrencyDetails implements Initializable {
     }
 
     public void showChart(ActionEvent actionEvent) {
-        MenuFunctionality.replaceChartList(currency.getId());
+        MenuFunctionality.displayOneObjechChart(currency.getId());
     }
 }
