@@ -15,7 +15,10 @@
 
         <TableView fx:id="tableView" layoutX="50.0" layoutY="250.0" prefHeight="200.0" prefWidth="300.0">
         </TableView>
-        <Button fx:id="deleteItem" layoutX="150.0" layoutY="475.0" mnemonicParsing="false" onAction="#deleteItem" prefWidth="100" text="Usuń" />
+        <Button fx:id="deleteItem" layoutX="50.0" layoutY="475.0" mnemonicParsing="false" onAction="#deleteItem" prefWidth="100" text="Usuń" />
+        <Button fx:id="addToChart" layoutX="200.0" layoutY="475.0" mnemonicParsing="false" onAction="#addToChart" prefWidth="150" text="Dodaj do wykresu" />
+        <Button fx:id="deleteFromChart" layoutX="200.0" layoutY="475.0" mnemonicParsing="false" onAction="#deleteFromChart" prefWidth="150" text="Usuń z wykresu" />
+        <Button fx:id="showChart" layoutX="50.0" layoutY="525.0" mnemonicParsing="false" onAction="#showChart" prefWidth="300" text="Pokaż wykres" />
     </children>
 
 </AnchorPane>

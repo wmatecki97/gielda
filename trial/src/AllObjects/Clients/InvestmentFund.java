@@ -3,12 +3,8 @@ package AllObjects.Clients;
 import AllObjects.Goods.Currency;
 import AllObjects.Goods.Goods;
 import AllObjects.Goods.RawMaterials;
-import AllObjects.functionalClasses.Purchase;
-import AllObjects.functionalClasses.AdditionalFunctions;
-import AllObjects.functionalClasses.AllInstancess;
+import AllObjects.functionalClasses.*;
 import AllObjects.functionalClasses.DataGenerator.DataGenerator;
-import AllObjects.functionalClasses.HasName;
-import AllObjects.functionalClasses.MenuFunctionality;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,11 +12,12 @@ import java.util.List;
 
 import static java.lang.Thread.sleep;
 
-public class InvestmentFund extends Client implements AllInstancess, HasName, Runnable, Serializable {
+public class InvestmentFund extends Client implements AllInstancess, HasName, Runnable, Serializable, HasValue, ChartItem {
 
     private String name;
     private double currentValue;
     private int unitsSold;
+    protected List<Double> valueList;
 
 
     public InvestmentFund(){
@@ -28,13 +25,15 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
         unitsSold=1;
         currentValue=AdditionalFunctions.getRandom(1,10000);
         purchaseList = new ArrayList<>();
+        valueList = new ArrayList<Double>();
     }
+
 
     public synchronized Purchase buyPurchases(double price){
 
-        double temp = price%getCurrentValue();
+        double temp = price%getValue();
         price = price-temp;
-        Purchase unit = new Purchase(getId(),price/getCurrentValue());
+        Purchase unit = new Purchase(getId(),price/getValue());
         unitsSold+=(int) price/currentValue;
         if(budget<1000000000)
             budget=budget+price;
@@ -43,21 +42,7 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
     }
 
     @Override
-    public void run() {
-
-        while(running)
-        {
-            try{
-                sleep(500);
-            }
-            catch (Exception e){}
-            buy();
-            work();
-        }
-
-    }
-
-    private synchronized void work(){
+    protected synchronized void work(){
 
         if(purchaseList.size()>0){
             double value=0.0;
@@ -74,8 +59,10 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
             }
             value=(value+budget)/unitsSold;
             setCurrentValue(value);
+            valueList.add(value);
         }
     }
+
 
     public List<Purchase> getPurchaseList() {
         return purchaseList;
@@ -88,36 +75,12 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
             MenuFunctionality.buyOnRandomMarket(this ,AdditionalFunctions.getRandom(1,(int)budget,2) );
     }
 
-    public synchronized void display(){
-        super.display();
-        System.out.print("nazwa: " + name +"\n");
-    }
 
     public void setCurrentValue(double currentValue) {
         if(currentValue<0)
             System.out.println("asf");
         this.currentValue = currentValue;
     }
-
-    public synchronized String getOutputString(){
-
-        String output="";
-        output=name +" "+ super.getOutputString();
-        return output;
-    };
-
-    public synchronized InvestmentFund setValues(String inputString){
-
-        String[] strArr = AdditionalFunctions.split(inputString);
-        InvestmentFund output = new InvestmentFund();
-
-        output.name = strArr[0];
-        output.setFirstName(strArr[1]);
-        output.setSurname(strArr[2]);
-
-        return output;
-
-    };
 
     public synchronized String getName() {
         return name;
@@ -127,7 +90,34 @@ public class InvestmentFund extends Client implements AllInstancess, HasName, Ru
         this.name = name;
     }
 
-    public double getCurrentValue() {
+    public synchronized double getValue() {
         return currentValue;
+    }
+
+    @Override
+    public void bought(double v) {
+
+    }
+
+    /**
+     * deletes purchases of given object id
+     * @param price
+     * @param id
+     */
+    public synchronized void repurchase(double price, int id) {
+
+        for(int i=0; i<purchaseList.size(); i++){
+            if(purchaseList.get(i).getSubjectId()==id){
+                budget+=price*purchaseList.get(i).getAmount();
+                purchaseList.remove(i);
+                return;
+            }
+        }
+
+    }
+
+    @Override
+    public List<Double> getValueList() {
+        return valueList;
     }
 }

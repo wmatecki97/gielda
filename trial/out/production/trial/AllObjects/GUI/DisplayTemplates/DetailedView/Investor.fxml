@@ -10,7 +10,7 @@
        <Label fx:id="l1" layoutX="50.0" layoutY="50.0" text="Imię" />
        <Label fx:id="l2" layoutX="200.0" layoutY="50.0" text="Nazwisko" />
        <Label fx:id="l3" layoutX="50.0" layoutY="100.0" text="Budżet" />
-       <Label fx:id="l4" layoutX="200.0" layoutY="100.0" text="ID" />
+       <Label fx:id="l4" layoutX="200.0" layoutY="150.0" text="ID" />
        <Label fx:id="l5" layoutX="50.0" layoutY="150.0" text="PESEL" />
       <TableView fx:id="tableView" layoutX="50.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0">
       </TableView>

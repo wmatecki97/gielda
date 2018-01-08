@@ -14,9 +14,17 @@ import javafx.stage.WindowEvent;
 import java.awt.*;
 import java.io.IOException;
 
+
 public class PageOpener {
 
-
+    /**
+     * open stage of given parameters
+     * @param path fxml file path
+     * @param title stage title
+     * @param height
+     * @param width
+     * @param isCritical if is critical then closing this stage would close whole program
+     */
     private static void open(String path, String title, int height, int width, boolean isCritical){
 
         Parent root;
@@ -46,15 +54,9 @@ public class PageOpener {
 
     }
 
-    private static void open(String path, String title, boolean isCritical){
-
-        open(path, title, 300, 450, isCritical);
-
-    }
-
     public synchronized static void startPage(){
 
-        open("StartPageView.fxml", "Wybierz akcję", true);
+        open("StartPageView.fxml", "Wybierz akcję", 300, 250, true);
 
     }
 
@@ -79,34 +81,43 @@ public class PageOpener {
     }
 
     public synchronized static void companyPage(){
-        open("./DisplayTemplates/CompanyView.fxml", "Spółki", 400, 700, false);
+        open("DisplayTemplates/CompanyView.fxml", "Spółki", 400, 700, false);
     }
 
     public synchronized static void currencyPage(){
-        open("./DisplayTemplates/CurrencyView.fxml", "Waluty", 400, 800, false);
+        open("DisplayTemplates/CurrencyView.fxml", "Waluty", 400, 450, false);
     }
 
     public synchronized static void exchangePage(){
-        open("./DisplayTemplates/ExchangeView.fxml", "Giełdy", 400, 1300, false);
+        open("DisplayTemplates/ExchangeView.fxml", "Giełdy", 400, 1300, false);
     }
 
-    public synchronized static void rawMaterialPage(){open("./DisplayTemplates/RawMaterialView.fxml", "Surowce", 400, 800, false);
+    public synchronized static void rawMaterialPage(){open("DisplayTemplates/RawMaterialView.fxml", "Surowce", 400, 450, false);
     }
 
     public synchronized static void detailsInvestor(){
-        open("./DisplayTemplates/DetailedView/Investor.fxml", "Szczegóły inwestora", 500, 400, false);
+        open("DisplayTemplates/DetailedView/Investor.fxml", "Szczegóły inwestora", 500, 400, false);
     }
 
     public synchronized static void detailsInvestmentFund(){
-        open("./DisplayTemplates/DetailedView/InvestmentFund.fxml", "Szczegóły funduszu inwestycyjnego", 550, 400, false);
+        open("DisplayTemplates/DetailedView/InvestmentFund.fxml", "Szczegóły funduszu inwestycyjnego", 600, 400, false);
     }
 
     public synchronized static void detailsCompany() {
-        open("./DisplayTemplates/DetailedView/Company.fxml", "Szczegóły funduszu inwestycyjnego", 450, 627, false);
+        open("DisplayTemplates/DetailedView/Company.fxml", "Szczegóły funduszu inwestycyjnego", 550, 627, false);
     }
 
     public synchronized static void chart() {
-        open("./Chart.fxml", "Wykres", 450, 775, false);
+        open("Chart.fxml", "Wykres", 450, 775, false);
 
+    }
+
+    public static void detailsRawMaterial() {
+        open("DisplayTemplates/DetailedView/RawMaterials.fxml", "Szczegóły surowca", 475, 450, false);
+
+    }
+
+    public static void detailsCurrency() {
+        open("DisplayTemplates/DetailedView/Currency.fxml", "Szczegóły waluty", 475, 450, false);
     }
 }

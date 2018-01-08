@@ -34,16 +34,7 @@ public class RawMaterialsMarket extends Market implements Serializable {
             buy(client, subject, cost);
         }
     }
-/*
-    public synchronized List<RawMaterials> getGoodsList() {
 
-        List<RawMaterials> result = new ArrayList<>();
-        for(Goods good: goodsList) {
-            result.add((RawMaterials) good);
-        }
-        return result;
-    }
-*/
     public synchronized void add(RawMaterials rawMaterial){
         goodsList.add(rawMaterial);
     }

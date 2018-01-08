@@ -8,6 +8,9 @@ public class Purchase implements Serializable{
 
     private double amount;
     private int subjectId;
+    /**
+     * subject name
+     */
     private String subject;
 
     public Purchase(int subjectId, double amount){

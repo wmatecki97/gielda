@@ -15,6 +15,11 @@ public class AdditionalFunctions {
 
     private static List<Integer> indexList= new ArrayList<Integer>();
 
+    /**
+     * Converts list of String to string
+     * @param inputList
+     * @return String
+     */
     public static String ListToString(List<String> inputList){
         String output="";
         for (String item : inputList) {
@@ -24,42 +29,10 @@ public class AdditionalFunctions {
         return output;
     }
 
-    public static String[] split(String inputString){ //split read line of text to array of strings
-
-        int counter=1;
-        List<Integer> separateIndex = new ArrayList<>();
-        separateIndex.add(-1);
-
-        char[] inputArr = inputString.toCharArray();
-
-        for( int i=0; i<inputString.length(); i++){ //create a list of index where to separate
-            if(inputArr[i]==' ') {
-                counter++;
-                separateIndex.add(i);
-            }
-        }
-        separateIndex.add(inputString.length());
-        String[] outputArr = new String[counter];
-
-        for(int i=0; i<counter; i++){
-
-            outputArr[i] = inputString.substring(separateIndex.get(i)+1, separateIndex.get(i+1));
-        }
-
-        return outputArr;
-
-    }
-
-    public static void display(List<AllInstancess> inputList){
-        int i=0;
-        for (AllInstancess temp : inputList){
-            System.out.print(i+") ");
-            i++;
-            temp.display();
-        }
-
-    }
-
+    /**
+     * Returns unique index
+     * @return
+     */
     public static int getUniqueIndex(){
         int i=0;
         while(indexList.indexOf(i)!=-1) i++;
@@ -67,15 +40,11 @@ public class AdditionalFunctions {
         return i;
     }
 
-    public static void checkIndex(List<Client> clientList, int index){
-
-        for(Client temp : clientList){
-            if(index==temp.getId()){
-                indexList.remove(index);
-            }
-        }
-    }
-
+    /**
+     * converts date to dd-mm-yyyy String
+     * @param myDate
+     * @String dd-mm-yyyy
+     */
     public static String dateToString(Date myDate){
 
         String result="";
@@ -101,6 +70,13 @@ public class AdditionalFunctions {
 
     }
 
+    /**
+     * Max value must be greater or equal than min value
+     * @param min
+     * @param max
+     * @param precission
+     * @return double
+     */
     public static double getRandom(int min, int max, int precission){
 
         if(precission>9)precission=9;
@@ -115,6 +91,7 @@ public class AdditionalFunctions {
         return MenuFunctionality.getRandomGoods();
 
     }
+
 
     public static String doubleToShortString(double d){
         int length=0;

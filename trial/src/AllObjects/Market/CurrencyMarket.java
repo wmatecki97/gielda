@@ -20,16 +20,6 @@ public class CurrencyMarket extends Market implements Serializable {
         }
     }
 
-    /*
-    public synchronized List<Currency> getGoodsList() {
-
-        List<Currency> result = new ArrayList<>();
-        for(Goods good: goodsList) {
-            result.add((Currency)good);
-        }
-        return result;
-    }
-*/
     public synchronized void add(Currency currency){
         goodsList.add(currency);
     }

@@ -3,6 +3,7 @@ package AllObjects.GUI.DisplayTemplates.DetailedView;
 import AllObjects.Clients.InvestmentFund;
 import AllObjects.functionalClasses.Purchase;
 import AllObjects.functionalClasses.MenuFunctionality;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,6 +27,10 @@ public class InvestmentFundDetails implements Initializable {
 
     @FXML
     private Button deleteItem;
+    @FXML
+    private Button addToChart;
+    @FXML
+    private Button deleteFromChart;
 
 
     @FXML
@@ -46,14 +51,20 @@ public class InvestmentFundDetails implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         investor = (InvestmentFund) MenuFunctionality.getDisplayedObject();
         MenuFunctionality.releaseDisplayedObjectSemaphore();
+
+        if(MenuFunctionality.checkOccuranceInChart(investor.getId()))
+            addToChart.visibleProperty().bind(new SimpleBooleanProperty(false));
+        else
+            deleteFromChart.visibleProperty().bind(new SimpleBooleanProperty(false));
 
         l1.setText("Imię: "+investor.getFirstName());
         l2.setText("Nazwisko: " + investor.getSurname());
         l3.setText("Nazwa: " + investor.getName());
         l5.setText("ID: "+investor.getId());
-        l6.setText("Wartość jednostki: "+ investor.getCurrentValue());
+        l6.setText("Wartość jednostki: "+ investor.getValue());
 
         TableColumn nameColumn = new TableColumn("Aktywa");
         nameColumn.setCellValueFactory(new PropertyValueFactory("subject"));
@@ -80,4 +91,23 @@ public class InvestmentFundDetails implements Initializable {
 
     }
 
+    public void addToChart(ActionEvent actionEvent) {
+        MenuFunctionality.addChartLine(investor);
+        addToChart.visibleProperty().bind(new SimpleBooleanProperty(false));
+        deleteFromChart.visibleProperty().bind(new SimpleBooleanProperty(true));
+        Stage stage = (Stage) deleteItem.getScene().getWindow();
+        stage.close();
+    }
+
+    public void deleteFromChart(ActionEvent actionEvent) {
+        MenuFunctionality.deleteChartLine(investor.getId());
+        deleteFromChart.visibleProperty().bind(new SimpleBooleanProperty(false));
+        addToChart.visibleProperty().bind(new SimpleBooleanProperty(true));
+        Stage stage = (Stage) deleteItem.getScene().getWindow();
+        stage.close();
+    }
+
+    public void showChart(ActionEvent actionEvent) {
+        MenuFunctionality.replaceChartList(investor.getId());
+    }
 }

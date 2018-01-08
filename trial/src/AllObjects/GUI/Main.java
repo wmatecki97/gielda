@@ -17,7 +17,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("StartPageView.fxml"));
         primaryStage.setTitle("Wybierrz akcję");
-        primaryStage.setScene(new Scene(root, 800, 275));
+        primaryStage.setScene(new Scene(root, 250, 300));
         primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent t) {

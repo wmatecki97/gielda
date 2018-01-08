@@ -6,10 +6,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * keeps information needed to display object on chart
+ */
 public class ChartLine implements Serializable {
 
     private String name;
     private int id;
+    /**
+     * list of values
+     */
     private List<Double> list;
 
     public String getName() {

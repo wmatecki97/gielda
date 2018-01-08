@@ -39,7 +39,7 @@ public class InvestmentFundController implements Initializable {
 */        TableColumn nameColumn = new TableColumn("Nazwa");
         nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
         TableColumn valueColumn = new TableColumn("Wartość jednostki uczestnictwa");
-        valueColumn.setCellValueFactory(new PropertyValueFactory("currentValue"));
+        valueColumn.setCellValueFactory(new PropertyValueFactory("value"));
 
 
         nameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(2));

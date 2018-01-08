@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="AllObjects.GUI.DisplayTemplates.DetailedView.CurrencyDetails"
+            prefHeight="400.0" prefWidth="600.0">
+            <Label fx:id="l1" layoutX="50.0" layoutY="50.0"  />
+            <Label fx:id="l2" layoutX="50.0" layoutY="100.0"  />
+
+            <ListView fx:id="listView" layoutX="50.0" layoutY="150.0" prefHeight="150.0" prefWidth="350.0" />
+
+            <Button fx:id="deleteItem" layoutX="50.0" layoutY="350.0" mnemonicParsing="false" onAction="#deleteItem" prefWidth="100" text="Usuń" />
+            <Button fx:id="addToChart" layoutX="200.0" layoutY="350.0" mnemonicParsing="false" onAction="#addToChart" prefWidth="200" text="Dodaj do wykresu" />
+            <Button fx:id="deleteFromChart" layoutX="200.0" layoutY="350.0" mnemonicParsing="false" onAction="#deleteFromChart" prefWidth="200" text="Usuń z wykresu" />
+            <Button fx:id="showChart" layoutX="50.0" layoutY="400.0" mnemonicParsing="false" onAction="#showChart" prefWidth="350" text="Pokaż wykres" />
+
+</AnchorPane>

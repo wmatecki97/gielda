@@ -24,11 +24,15 @@ public class Market implements Serializable{
         }
     }
 
+    /**
+     * returns objects avilable in market
+     * @return
+     */
     public List<Goods> getGoodsList() {
         return goodsList;
     }
 
-    protected synchronized void buy(InvestmentFund client, Goods subject, double cost){//can not be synchronised
+    protected synchronized void buy(InvestmentFund client, Goods subject, double cost){
 
         double markupValue = cost*markup;
         cost = cost-markupValue;
@@ -37,8 +41,9 @@ public class Market implements Serializable{
         double budget = client.getBudget();
 
         client.setBudget(budget-cost-markupValue);
-
         client.addToPurchasesList(purchase);
+
+        subject.bought(purchase.getAmount());
 
     }
 

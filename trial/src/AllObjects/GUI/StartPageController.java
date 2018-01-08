@@ -45,6 +45,7 @@ public class StartPageController{
 
 
     public void chartAction(ActionEvent actionEvent) {
+        MenuFunctionality.setIsDetailedInformationChartVisible(false);
         PageOpener.chart();
     }
 

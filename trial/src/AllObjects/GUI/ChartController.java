@@ -3,8 +3,10 @@ package AllObjects.GUI;
 import AllObjects.Goods.Company;
 import AllObjects.functionalClasses.AllInstancess;
 import AllObjects.functionalClasses.ChartLine;
+import AllObjects.functionalClasses.HasName;
 import AllObjects.functionalClasses.MenuFunctionality;
 import com.sun.org.apache.xml.internal.security.Init;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +19,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
@@ -46,9 +49,14 @@ public class ChartController implements Initializable {
     @FXML
     private ListView<ChartLine> listView;
 
+    @FXML
+    private Button refresh;
+
     private void loadData(){
 
         list = MenuFunctionality.getChartIdList();
+        if(MenuFunctionality.isIsDetailedInformationChartVisible())
+            refresh.visibleProperty().bind(new SimpleBooleanProperty(false));
 
         if(list.size()>0){
 
@@ -95,7 +103,15 @@ public class ChartController implements Initializable {
                 @Override
                 public void handle(MouseEvent event) {
                     MenuFunctionality.setDisplayedObject((AllInstancess) MenuFunctionality.getGood(listView.getSelectionModel().getSelectedItem().getId()));
-                    PageOpener.detailsCompany();
+                    HasName obj = MenuFunctionality.getGood(listView.getSelectionModel().getSelectedItem().getId());
+                    String type = obj.getClass().getSimpleName();
+                    switch (type){
+                        case "Company":PageOpener.detailsCompany(); break;
+                        case "RawMaterials":PageOpener.detailsRawMaterial(); break;
+                        case "Currency":PageOpener.detailsCurrency(); break;
+                        case "InvestmentFund":PageOpener.detailsInvestmentFund(); break;
+                    }
+
                 }
             });
         }
@@ -120,6 +136,6 @@ public class ChartController implements Initializable {
     }
 
     public void addData(ActionEvent actionEvent) {
-        PageOpener.companyPage();
+        PageOpener.displayPage();
     }
 }

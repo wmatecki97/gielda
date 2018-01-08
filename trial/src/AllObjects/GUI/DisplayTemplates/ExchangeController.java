@@ -41,7 +41,7 @@ public class ExchangeController implements Initializable {
         adressColumn.setCellValueFactory(new PropertyValueFactory("adress"));
         TableColumn markupColumn = new TableColumn("Marża");
         markupColumn.setCellValueFactory(new PropertyValueFactory("markup"));
-        TableColumn goodsColumn = new TableColumn("Lista spółek zarejestrowanych na giełdzie");
+        TableColumn goodsColumn = new TableColumn("Lista spółek z ideksu");
         goodsColumn.setCellValueFactory(new PropertyValueFactory("goods"));
 
 

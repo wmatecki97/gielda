@@ -1,7 +1,9 @@
 package AllObjects.GUI.DisplayTemplates.DetailedView;
 
 import AllObjects.Clients.InvestmentFund;
+import AllObjects.GUI.PageOpener;
 import AllObjects.Goods.Company;
+import AllObjects.Market.Exchange;
 import AllObjects.functionalClasses.AdditionalFunctions;
 import AllObjects.functionalClasses.MenuFunctionality;
 import AllObjects.functionalClasses.Purchase;
@@ -13,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -59,16 +62,23 @@ public class CompanyDetails implements Initializable{
     @FXML
     private Label l13;
 
+    @FXML
+    private TextField priceField;
 
     private Company company;
 
+    private double price;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+
         company = (Company) MenuFunctionality.getDisplayedObject();
         MenuFunctionality.releaseDisplayedObjectSemaphore();
+
+        priceField.setText(AdditionalFunctions.doubleToShortString(company.getValue()));
+
 
         if(MenuFunctionality.checkOccuranceInChart(company.getId()))
             addToChart.visibleProperty().bind(new SimpleBooleanProperty(false));
@@ -118,5 +128,22 @@ public class CompanyDetails implements Initializable{
         Stage stage = (Stage) deleteItem.getScene().getWindow();
         stage.close();
 
+    }
+
+    public void repurchase(ActionEvent actionEvent) {
+        try{
+            price = Double.parseDouble(priceField.getText());
+            MenuFunctionality.repurchase(price, company.getId());
+        }
+        catch (Exception e){
+            MenuFunctionality.setErrorMessage("Niepoprawna wartość");
+            PageOpener.popUp();
+        }
+        Stage stage = (Stage) deleteItem.getScene().getWindow();
+        stage.close();
+    }
+
+    public void showChart(ActionEvent actionEvent) {
+        MenuFunctionality.replaceChartList(company.getId());
     }
 }

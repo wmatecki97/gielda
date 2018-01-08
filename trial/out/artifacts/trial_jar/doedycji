@@ -1,0 +1,13 @@
+investorList=save.getInvestorList();
+        investmentFundList=save.getInvestmentFundList();
+        companyList=save.getCompanyList();
+        currencyList=save.getCurrencyList();
+        exchangeList=save.getExchangeList();
+        rawMaterialList=save.getRawMaterialList();
+        shareIndexList=save.getShareIndexList();
+        currencyMarket=save.getCurrencyMarket();
+        rawMaterialsMarket=save.getRawMaterialsMarket();
+        displayedObject=save.getDisplayedObject();
+        chartList=save.getChartList();
+        errorMessage=save.getErrorMessage();
+        displaysemaphore=save.getDisplaysemaphore();

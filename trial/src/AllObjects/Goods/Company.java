@@ -9,16 +9,22 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import static AllObjects.functionalClasses.AdditionalFunctions.getRandom;
-import static AllObjects.functionalClasses.AdditionalFunctions.split;
-import static java.lang.Thread.sleep;
-import java.util.List;
 
 public class Company extends Goods implements Runnable, Serializable{
 
     private Date date;
+    /**
+     * minimum value
+     */
     private double min;
+    /**
+     * maximum value
+     */
     private double max;
     private int numberOfActions;
+    /**
+     * action which are not sol
+     */
     private int actionsLeft;
     private double openingValue;
     private double profit;
@@ -27,10 +33,6 @@ public class Company extends Goods implements Runnable, Serializable{
     private double factoryCapital;
     private int volume;
     private double turnover;
-    private List<Double> valueList;
-
-
-
 
     public Company(){
         setName(DataGenerator.getName());
@@ -49,7 +51,6 @@ public class Company extends Goods implements Runnable, Serializable{
 
         //volume do ustawienia!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         setTurnover(income*12*getRandom(0,200)/100);
-        setValueList(new ArrayList<Double>());
         addToValueList(getValue());
 
     }
@@ -96,21 +97,6 @@ public class Company extends Goods implements Runnable, Serializable{
         this.openingValue = openingValue;
     }
 
-    public synchronized void setValueList(List<Double> valueList) {
-        this.valueList = valueList;
-    }
-
-    public synchronized List<Double> getValueList() {
-        return valueList;
-    }
-
-
-
-    private synchronized void addToValueList(Double value){
-        valueList.add(value);
-    }
-
-
     public synchronized double getMax() {
         return max;
     }
@@ -118,10 +104,6 @@ public class Company extends Goods implements Runnable, Serializable{
     public synchronized void setMax(double max) {
         this.max = max;
     }
-
-
-
-
 
     @Override
     public synchronized boolean checkIfIsEnough (double budget){
@@ -133,45 +115,6 @@ public class Company extends Goods implements Runnable, Serializable{
 
     public synchronized int getActionsLeft() {
         return actionsLeft;
-    }
-
-    public synchronized void display() {
-        System.out.println("nazwa: " + name + " data: " + AdditionalFunctions.dateToString(date) + " kurs wymiany: " + super.value + " minimalna wartosc: " + min + " liczba akcji: " + numberOfActions + " zysk: " +
-                profit + " przychd: " + income + " kapita wasny: " + individualCapital + " kapita zakadowy: " + factoryCapital + " wolumen: " + volume + " obroty: " + turnover);
-    }
-
-    public synchronized String getOutputString(){
-        String output = name + " "  + AdditionalFunctions.dateToString(date) + " "  + super.value + " "  + min  + " "  + numberOfActions + " "  +profit + " "  +income + " "  +
-                individualCapital + " "  +factoryCapital + " "  +volume + " "  +turnover;
-        return output;
-    };
-
-    public synchronized Company setValues(String inputString){
-
-        String[] strArr = split(inputString);
-        Company output= new Company();
-
-        output.name = strArr[0];   
-        //output.date = ; Double.
-        output.value = Double.parseDouble(strArr[2]);
-        output.min = Double.parseDouble(strArr[3]);
-        output.numberOfActions = Integer.parseInt(strArr[4]);
-        output.profit = Double.parseDouble(strArr[5]);
-        output.income = Double.parseDouble(strArr[6]);
-        output.individualCapital = Double.parseDouble(strArr[7]);
-        output.factoryCapital = Double.parseDouble(strArr[8]);
-        output.volume = Integer.parseInt(strArr[9]);
-        output.turnover = Double.parseDouble(strArr[10]);
-        return output;
-
-    };
-
-    public synchronized int getVolume() {
-        return volume;
-    }
-
-    public synchronized void setVolume(int volume) {
-        this.volume = volume;
     }
 
     public synchronized double getTurnover() {
@@ -197,7 +140,6 @@ public class Company extends Goods implements Runnable, Serializable{
     public synchronized void setDate(Date date) {
         this.date = date;
     }
-
 
     public synchronized double getMin() {
         return min;

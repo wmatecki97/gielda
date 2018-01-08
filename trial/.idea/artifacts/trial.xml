@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="trial">
+    <output-path>$PROJECT_DIR$/out/artifacts/trial</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="AllObjects.GUI.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="Giełda" />
+        <option name="vendor" value="" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="trial.jar">
+        <element id="module-output" name="trial" />
+      </element>
+    </root>
+  </artifact>
+</component>

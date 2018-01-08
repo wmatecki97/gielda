@@ -1,5 +1,7 @@
 package AllObjects.GUI.DisplayTemplates;
 
+import AllObjects.Clients.Investor;
+import AllObjects.GUI.PageOpener;
 import AllObjects.Goods.Goods;
 import AllObjects.Goods.RawMaterials;
 import AllObjects.functionalClasses.MenuFunctionality;
@@ -7,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -33,29 +36,34 @@ public class RawMaterialController implements Initializable {
         nameColumn.setCellValueFactory(new PropertyValueFactory("name"));
         TableColumn unitColumn = new TableColumn("Jednostka");
         unitColumn.setCellValueFactory(new PropertyValueFactory("unit"));
-        TableColumn currencyColumn = new TableColumn("Waluta");
-        currencyColumn.setCellValueFactory(new PropertyValueFactory("currency"));
         TableColumn valueColumn = new TableColumn("Wartość");
         valueColumn.setCellValueFactory(new PropertyValueFactory("value"));
-        TableColumn minColumn = new TableColumn("Min");
-        minColumn.setCellValueFactory(new PropertyValueFactory("min"));
-        TableColumn maxColumn = new TableColumn("Max");
-        maxColumn.setCellValueFactory(new PropertyValueFactory("max"));
 
-        nameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
-        unitColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
-        currencyColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
-        valueColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
-        minColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
-        maxColumn.prefWidthProperty().bind(tableView.widthProperty().divide(6));
+        nameColumn.prefWidthProperty().bind(tableView.widthProperty().divide(3));
+        unitColumn.prefWidthProperty().bind(tableView.widthProperty().divide(3));
+        valueColumn.prefWidthProperty().bind(tableView.widthProperty().divide(3));
 
 
-        tableView.getColumns().addAll(nameColumn, unitColumn, currencyColumn, valueColumn, minColumn, maxColumn);
+        tableView.getColumns().addAll(nameColumn, unitColumn, valueColumn);
         ObservableList<RawMaterials> data = tableView.getItems();
         List<Goods> list = MenuFunctionality.getRawMaterialList();
         for(Goods good: list){
             data.add((RawMaterials) good);
         }
+
+        tableView.setRowFactory( tv -> {
+            TableRow<RawMaterials> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+                    RawMaterials rowData = row.getItem();
+                    if(rowData!=null){
+                        MenuFunctionality.setDisplayedObject(rowData);
+                        PageOpener.detailsRawMaterial();
+                    }
+                }
+            });
+            return row ;
+        });
 
     }
 }

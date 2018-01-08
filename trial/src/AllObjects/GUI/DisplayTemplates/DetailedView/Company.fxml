@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="AllObjects.GUI.DisplayTemplates.DetailedView.CompanyDetails"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="516.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AllObjects.GUI.DisplayTemplates.DetailedView.CompanyDetails">
     <children>
         <Label fx:id="l1" layoutX="50.0" layoutY="50.0" text="" />
         <Label fx:id="l2" layoutX="350.0" layoutY="50.0" text="" />
@@ -32,6 +28,11 @@
         <Button fx:id="deleteItem" layoutX="50.0" layoutY="400.0" mnemonicParsing="false" onAction="#deleteItem" prefWidth="200" text="Usuń" />
         <Button fx:id="addToChart" layoutX="350.0" layoutY="400.0" mnemonicParsing="false" onAction="#addToChart" prefWidth="200" text="Dodaj do wykresu" />
         <Button fx:id="deleteFromChart" layoutX="350.0" layoutY="400.0" mnemonicParsing="false" onAction="#deleteFromChart" prefWidth="200" text="Usuń z wykresu" />
+
+        <Button fx:id="repurchase" layoutX="50.0" layoutY="450.0" mnemonicParsing="false" onAction="#repurchase" prefWidth="200" text="Wykup akcje" />
+        <TextField fx:id="priceField" layoutX="350.0" layoutY="450.0" prefHeight="31.0" prefWidth="200.0" />
+        <Button fx:id="showChart" layoutX="50.0" layoutY="500.0" mnemonicParsing="false" onAction="#showChart" prefWidth="550" text="Pokaż wykres" />
+
 
     </children>
 

@@ -61,7 +61,7 @@ public class CompanyController implements Initializable {
                 if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
                     Company rowData = row.getItem();
                     if(rowData!=null){
-                        if(MenuFunctionality.checkCompanyOccurance(rowData.getId())){
+                        if(MenuFunctionality.checkItemOccurance(rowData.getId())){
                             MenuFunctionality.setDisplayedObject(rowData);
                             PageOpener.detailsCompany();
                         }

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="trial" />
+    </artifacts-to-build>
+  </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/AllObjects/Clients/InvestmentFund.java" />
   </component>
@@ -14,17 +22,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/trial$Main.coverage" NAME="Main Coverage Results" MODIFIED="1515341445963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/trial$Main.coverage" NAME="Main Coverage Results" MODIFIED="1515360496102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="MenuFunctionality.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/MenuFunctionality.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+            <state relative-caret-position="208">
+              <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
               <folding>
-                <element signature="method#initialize#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#addNewInvestor#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#addNewInvestmentFund#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#addNewCompany#0;class#MenuFunctionality#0" expanded="false" />
@@ -32,135 +39,165 @@
                 <element signature="method#addNewExchange#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#addNewRawMaterial#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#getErrorMessage#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="e#4943#4944#0" expanded="true" />
                 <element signature="method#save#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#read#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#setErrorMessage#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#setErrorMessage#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#addCompanyToExchanges#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#addCompanyToExchanges#0;class#MenuFunctionality#0" expanded="false" />
-                <element signature="method#checkCompanyOccurance#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#checkItemOccurance#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="method#checkItemOccurance#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#getRandomGoods#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#getRandomGoods#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#buyParticipationUnits#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#buyParticipationUnits#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#buyOnRandomMarket#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#buyOnRandomMarket#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#setDisplayedObject#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#setDisplayedObject#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#getGood#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#getGood#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#getGoodValue#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="method#getGoodValue#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#goodHasBeenDeleted#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#goodHasBeenDeleted#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#deleteObject#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#deleteObject#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#addChartLine#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#addChartLine#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#checkOccuranceInChart#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#checkOccuranceInChart#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#deleteChartLine#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#deleteChartLine#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#getChartIdList#0;class#MenuFunctionality#0" expanded="false" />
                 <element signature="method#getChartIdList#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="docComment;method#repurchase#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="method#repurchase#0;class#MenuFunctionality#0" expanded="false" />
+                <element signature="method#sellGood#0;class#MenuFunctionality#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShareIndex.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AllObjects/ShareIndex.java">
+      <file leaf-file-name="StartPageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/StartPageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AllObjects/index.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Investor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AllObjects/Clients/Investor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="48" column="43" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+            <state relative-caret-position="512">
+              <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
               <folding>
-                <element signature="method#Investor#0;class#Investor#0" expanded="false" />
-                <element signature="method#display#0;class#Investor#0" expanded="false" />
-                <element signature="method#getOutputString#0;class#Investor#0" expanded="false" />
-                <element signature="method#setValues#0;class#Investor#0" expanded="false" />
-                <element signature="method#increaseBudget#0;class#Investor#0" expanded="false" />
+                <element signature="e#1336#1337#0" expanded="true" />
+                <element signature="e#1376#1377#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AllObjects/Clients/Client.java">
+      <file leaf-file-name="ChartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/ChartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="987">
-              <caret line="56" column="23" lean-forward="false" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+            <state relative-caret-position="192">
+              <caret line="58" column="76" lean-forward="false" selection-start-line="58" selection-start-column="76" selection-end-line="58" selection-end-column="76" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Currency.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/Currency.java">
+      <file leaf-file-name="Currency.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Currency.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="20" column="128" lean-forward="false" selection-start-line="20" selection-start-column="128" selection-end-line="20" selection-end-column="128" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InvestmentFund.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestmentFund.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="20" column="124" lean-forward="false" selection-start-line="20" selection-start-column="124" selection-end-line="20" selection-end-column="124" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExchangeView.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/ExchangeView.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExchangeController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/ExchangeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Company.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/Company.java">
+      <file leaf-file-name="PageOpener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/PageOpener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Goods.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/Goods.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="390">
+              <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding>
-                <element signature="method#run#0;class#Goods#0" expanded="false" />
-                <element signature="method#terminate#0;class#Goods#0" expanded="false" />
-                <element signature="method#checkIfIsEnough#0;class#Goods#0" expanded="false" />
-                <element signature="method#display#0;class#Goods#0" expanded="false" />
+                <element signature="docComment;method#open#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#open#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#startPage#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#investorPage#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#investmentFundPage#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#companyPage#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#currencyPage#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#exchangePage#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#rawMaterialPage#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#detailsInvestor#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#detailsCompany#0;class#PageOpener#0" expanded="false" />
+                <element signature="method#chart#0;class#PageOpener#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InvestmentFund.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AllObjects/Clients/InvestmentFund.java">
+      <file leaf-file-name="Company.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Company.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="119" column="6" lean-forward="true" selection-start-line="119" selection-start-column="6" selection-end-line="119" selection-end-column="6" />
-              <folding>
-                <element signature="method#InvestmentFund#0;class#InvestmentFund#0" expanded="false" />
-                <element signature="method#buyPurchases#0;class#InvestmentFund#0" expanded="false" />
-                <element signature="method#run#0;class#InvestmentFund#0" expanded="false" />
-                <element signature="method#work#0;class#InvestmentFund#0" expanded="false" />
-                <element signature="method#buy#0;class#InvestmentFund#0" expanded="false" />
-                <element signature="method#display#0;class#InvestmentFund#0" expanded="false" />
-                <element signature="method#setCurrentValue#0;class#InvestmentFund#0" expanded="false" />
-                <element signature="method#getOutputString#0;class#InvestmentFund#0" expanded="false" />
-                <element signature="method#setValues#0;class#InvestmentFund#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RawMaterialController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/RawMaterialController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="44" column="78" lean-forward="false" selection-start-line="44" selection-start-column="78" selection-end-line="44" selection-end-column="78" />
+            <state relative-caret-position="366">
+              <caret line="33" column="106" lean-forward="false" selection-start-line="33" selection-start-column="106" selection-end-line="33" selection-end-column="106" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RawMaterials.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/RawMaterials.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="24" column="120" lean-forward="false" selection-start-line="24" selection-start-column="120" selection-end-line="24" selection-end-column="120" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -178,12 +215,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>//</find>
-      <find>private TableView&lt;Company&gt; tableView;</find>
-      <find>&gt; tableView;</find>
-      <find>private TableView&lt;InvestmentFund&gt; tableView;</find>
-      <find>dodaj</find>
-      <find>wyswietl</find>
       <find>Investor&gt;</find>
       <find>good</find>
       <find>surname</find>
@@ -191,7 +222,6 @@
       <find>synchronised</find>
       <find>ParticipationUnit</find>
       <find>Investor</find>
-      <find>investor</find>
       <find>company.</find>
       <find>()</find>
       <find>200</find>
@@ -203,21 +233,20 @@
       <find>public static</find>
       <find>return</find>
       <find>static</find>
-      <find>static</find>
       <find>MenuFunctionality</find>
       <find>emptyGenerator</find>
       <find>widthProperty</find>
       <find>-</find>
+      <find>client.</find>
+      <find>investor</find>
+      <find>companyList</find>
+      <find>material</find>
+      <find>RawMaterials</find>
+      <find>Company</find>
+      <find>company</find>
+      <find>z</find>
     </findStrings>
     <replaceStrings>
-      <replace>public synchronized</replace>
-      <replace>clientId</replace>
-      <replace>list.get(i)</replace>
-      <replace>cost</replace>
-      <replace>private TableView&lt;InvestmentFund&gt; tableView;\n\n@FXML\nprivate AnchorPane pane;</replace>
-      <replace>&gt; tableView;\n\n\t@FXML\n\tprivate AnchorPane pane;</replace>
-      <replace>private TableView&lt;InvestmentFund&gt; tableView;\n\n\t@FXML\n\tprivate AnchorPane pane;</replace>
-      <replace>Dodaj</replace>
       <replace>wyświelt</replace>
       <replace>RawMaterial&gt;</replace>
       <replace>RawMaterials&gt;</replace>
@@ -225,7 +254,6 @@
       <replace>is synchronised</replace>
       <replace>synchronized</replace>
       <replace>Purchase</replace>
-      <replace>InvestmentFund</replace>
       <replace>company</replace>
       <replace>String.valueOf(company.</replace>
       <replace>).</replace>
@@ -240,6 +268,15 @@
       <replace>popUp</replace>
       <replace>getWidth</replace>
       <replace>+</replace>
+      <replace>item</replace>
+      <replace>material</replace>
+      <replace>rawMaterialList</replace>
+      <replace>exchangeList</replace>
+      <replace>Currency</replace>
+      <replace>InvestmentFundList</replace>
+      <replace>InvestmentFund</replace>
+      <replace>rawMaterial</replace>
+      <replace>currency</replace>
     </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -250,63 +287,63 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayPageView.fxml" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayPageController.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DisplayModels/DisplayRawMaterial.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestorView.fxml" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Investor.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Purchases/AllPurchases.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestmentFundDetails.fxml" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestorDetails.fxml" />
-        <option value="$PROJECT_DIR$/src/functionalClasses/DataGenerator/AssignData.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Investor.fxml" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestmentFund.fxml" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Purchases/ParticipationUnit.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Purchases/Purchase.java" />
         <option value="$PROJECT_DIR$/src/functionalClasses/HasName.java" />
         <option value="$PROJECT_DIR$/src/functionalClasses/MenuFunctionality.java" />
         <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestorDetails.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Company.fxml" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/Chart.fxml" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestmentFundDetails.java" />
         <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/ShortInformation.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/CompanyDetails.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/AdditionalFunctions.java" />
         <option value="$PROJECT_DIR$/src/AllObjects/GUI/PopUpController.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/ChartController.java" />
         <option value="$PROJECT_DIR$/src/doedycji" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/StartPageView.fxml" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Market/CurrencyMarket.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Market/Exchange.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Goods/RawMaterials.java" />
         <option value="$PROJECT_DIR$/src/AllObjects/GUI/EmptyGeneratorPopUp.fxml" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/StartPageController.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestorController.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/AllInstancess.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/ShareIndex.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Market/ShareIndex.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/DataGenerator/HasValue.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/HasValue.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestmentFundController.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/ChartItem.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/CompanyController.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/RawMaterialController.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/CurrencyController.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/StartPageView.fxml" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/Main.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Investor.fxml" />
+        <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/AdditionalFunctions.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Goods/Goods.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Clients/Client.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Clients/InvestmentFund.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Clients/Investor.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/DataGenerator/AssignData.java" />
         <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/ChartLine.java" />
         <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/Purchase.java" />
         <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/SaveRead.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/Main.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Market/RawMaterialsMarket.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Market/Market.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Clients/Investor.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/CompanyController.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/CurrencyController.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestorController.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestmentFundController.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/ExchangeController.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/PageOpener.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/RawMaterialController.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Clients/Client.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Goods/Currency.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Goods/Goods.java" />
         <option value="$PROJECT_DIR$/src/AllObjects/Goods/Company.java" />
-        <option value="$PROJECT_DIR$/src/AllObjects/Clients/InvestmentFund.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Goods/Currency.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Goods/RawMaterials.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Market/CurrencyMarket.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Market/Exchange.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Market/Market.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/Market/RawMaterialsMarket.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Company.fxml" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/CompanyDetails.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/CurrencyDetails.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestmentFundDetails.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/RawMaterialsDetails.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/Chart.fxml" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/StartPageController.java" />
         <option value="$PROJECT_DIR$/src/AllObjects/functionalClasses/MenuFunctionality.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/ChartController.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/RawMaterials.fxml" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/PageOpener.java" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Currency.fxml" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestmentFund.fxml" />
+        <option value="$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/ExchangeController.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="838" />
-    <option name="width" value="1090" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="width" value="976" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -324,8 +361,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -349,25 +387,62 @@
               <item name="trial" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="AllObjects" type="462c0819:PsiDirectoryNode" />
+              <item name="Clients" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trial" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AllObjects" type="462c0819:PsiDirectoryNode" />
               <item name="functionalClasses" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trial" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AllObjects" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trial" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AllObjects" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="DisplayTemplates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trial" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AllObjects" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="DisplayTemplates" type="462c0819:PsiDirectoryNode" />
+              <item name="DetailedView" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trial" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AllObjects" type="462c0819:PsiDirectoryNode" />
+              <item name="Market" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/projak java Wiktor Matecki/trial" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="298" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="225" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE" value="left" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE" value="ToolWindow" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -452,14 +527,21 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
+    <configuration name="trial.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/trial/trial.jar" />
+      <envs />
+    </configuration>
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="2" class="java.lang.String" itemvalue="JAR Application.trial.jar" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JAR Application.trial.jar" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -480,7 +562,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1359375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -490,18 +573,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2869757" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26821193" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28476822" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23854166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32119206" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32119206" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36754966" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24613686" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -523,19 +606,19 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2737307" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3642384" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29801324" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39624724" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22737306" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864583" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3620309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17552084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32119206" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -548,15 +631,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestorController.java</url>
-          <line>63</line>
+          <line>30</line>
           <properties />
-          <option name="timeStamp" value="290" />
+          <option name="timeStamp" value="319" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/RawMaterialsDetails.java</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="323" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AllObjects/GUI/ChartController.java</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="332" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AllObjects/GUI/ChartController.java</url>
+          <line>57</line>
+          <properties />
+          <option name="timeStamp" value="333" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="294" />
+      <option name="time" value="335" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -568,118 +669,507 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/stage/Window.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/AllInstancess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="845" column="0" lean-forward="false" selection-start-line="845" selection-start-column="0" selection-end-line="845" selection-end-column="0" />
+        <state relative-caret-position="63">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/scene/layout/Pane.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/HasName.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+        <state relative-caret-position="42">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/beans/property/StringPropertyBase.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/HasValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/scene/text/Font.java">
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/jre/lib/rt.jar!/java/util/List.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="280" column="35" lean-forward="false" selection-start-line="280" selection-start-column="35" selection-end-line="280" selection-end-column="35" />
+        <state relative-caret-position="212">
+          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/scene/layout/Region.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/ChartItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="3411" column="0" lean-forward="false" selection-start-line="3411" selection-start-column="0" selection-end-line="3411" selection-end-column="0" />
+        <state relative-caret-position="168">
+          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/css/CssMetaData.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestmentFundController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+        <state relative-caret-position="315">
+          <caret line="41" column="67" lean-forward="false" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/scene/CssStyleHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestorDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="828" column="0" lean-forward="false" selection-start-line="828" selection-start-column="0" selection-end-line="828" selection-end-column="0" />
+        <state relative-caret-position="350">
+          <caret line="80" column="22" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="80" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/scene/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/CompanyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="9192" column="0" lean-forward="false" selection-start-line="9192" selection-start-column="0" selection-end-line="9192" selection-end-column="0" />
+        <state relative-caret-position="579">
+          <caret line="63" column="64" lean-forward="false" selection-start-line="63" selection-start-column="64" selection-end-line="63" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/scene/Parent.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/RawMaterialController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-409">
-          <caret line="1257" column="70" lean-forward="true" selection-start-line="1257" selection-start-column="70" selection-end-line="1257" selection-end-column="70" />
+        <state relative-caret-position="567">
+          <caret line="43" column="79" lean-forward="false" selection-start-line="43" selection-start-column="79" selection-end-line="43" selection-end-column="79" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/CurrencyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        <state relative-caret-position="546">
+          <caret line="41" column="82" lean-forward="false" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/scene/Scene.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="1075" column="0" lean-forward="false" selection-start-line="1075" selection-start-column="0" selection-end-line="1075" selection-end-column="0" />
+        <state relative-caret-position="231">
+          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayPageController.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestorView.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="959">
+          <caret line="67" column="15" lean-forward="true" selection-start-line="67" selection-start-column="15" selection-end-line="67" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/util/Callback.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Clients/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        <state relative-caret-position="334">
+          <caret line="122" column="34" lean-forward="false" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
+          <folding>
+            <element signature="method#Client#0;class#Client#0" expanded="false" />
+            <element signature="method#run#0;class#Client#0" expanded="false" />
+            <element signature="method#work#0;class#Client#0" expanded="false" />
+            <element signature="method#terminate#0;class#Client#0" expanded="false" />
+            <element signature="method#goodHasBeenDeleted#0;class#Client#0" expanded="false" />
+            <element signature="method#addToPurchasesList#0;class#Client#0" expanded="false" />
+            <element signature="method#sell#0;class#Client#0" expanded="false" />
+            <element signature="method#getFirstName#0;class#Client#0" expanded="false" />
+            <element signature="method#deletePurchase#0;class#Client#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Clients/Investor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding>
+            <element signature="method#Investor#0;class#Investor#0" expanded="false" />
+            <element signature="method#buy#0;class#Investor#0" expanded="false" />
+            <element signature="method#increaseBudget#0;class#Investor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/DataGenerator/DataGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/DataGenerator/AssignData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding>
+            <element signature="method#assignNames#0;class#AssignData#0" expanded="false" />
+            <element signature="method#assignFirstNames#0;class#AssignData#0" expanded="false" />
+            <element signature="method#assignCountries#0;class#AssignData#0" expanded="false" />
+            <element signature="method#assignCurrencies#0;class#AssignData#0" expanded="false" />
+            <element signature="method#assignSurnames#0;class#AssignData#0" expanded="false" />
+            <element signature="method#assignRawMaterials#0;class#AssignData#0" expanded="false" />
+            <element signature="method#assignCityList#0;class#AssignData#0" expanded="false" />
+            <element signature="method#assignStreetList#0;class#AssignData#0" expanded="false" />
+            <element signature="method#assignExchangeName#0;class#AssignData#0" expanded="false" />
+            <element signature="method#assignData#0;class#AssignData#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/DataGenerator/RawMaterialData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/AdditionalFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding>
+            <element signature="method#ListToString#0;class#AdditionalFunctions#0" expanded="false" />
+            <element signature="method#dateToString#0;class#AdditionalFunctions#0" expanded="false" />
+            <element signature="method#getRandom#1;class#AdditionalFunctions#0" expanded="false" />
+            <element signature="method#getRandomGood#0;class#AdditionalFunctions#0" expanded="false" />
+            <element signature="method#doubleToShortString#0;class#AdditionalFunctions#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/ChartLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/Purchase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/SaveRead.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="141" column="5" lean-forward="false" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
+          <folding>
+            <element signature="method#Company#0;class#Company#0" expanded="false" />
+            <element signature="method#work#0;class#Company#0" expanded="false" />
+            <element signature="method#actualizeValue#0;class#Company#0" expanded="false" />
+            <element signature="method#checkIfIsEnough#0;class#Company#0" expanded="false" />
+            <element signature="method#setIndividualCapital#0;class#Company#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/Currency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="24" column="70" lean-forward="false" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/Goods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="21" selection-end-column="7" />
+          <folding>
+            <element signature="method#Goods#0;class#Goods#0" expanded="false" />
+            <element signature="method#actualizeValue#0;class#Goods#0" expanded="false" />
+            <element signature="method#run#0;class#Goods#0" expanded="false" />
+            <element signature="method#terminate#0;class#Goods#0" expanded="false" />
+            <element signature="method#checkIfIsEnough#0;class#Goods#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/RawMaterials.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding>
+            <element signature="method#RawMaterials#0;class#RawMaterials#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Market/CurrencyMarket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Market/Exchange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <element signature="method#Exchange#0;class#Exchange#0" expanded="false" />
+            <element signature="method#updateGoods#0;class#Exchange#0" expanded="false" />
+            <element signature="method#buy#0;class#Exchange#0" expanded="false" />
+            <element signature="e#2407#2408#0" expanded="true" />
+            <element signature="e#2437#2438#0" expanded="true" />
+            <element signature="e#2496#2497#0" expanded="true" />
+            <element signature="e#2534#2535#0" expanded="true" />
+            <element signature="e#2758#2759#0" expanded="true" />
+            <element signature="e#2785#2786#0" expanded="true" />
+            <element signature="e#2838#2839#0" expanded="true" />
+            <element signature="e#2870#2871#0" expanded="true" />
+            <element signature="e#2916#2917#0" expanded="true" />
+            <element signature="e#2945#2946#0" expanded="true" />
+            <element signature="e#3002#3003#0" expanded="true" />
+            <element signature="e#3038#3039#0" expanded="true" />
+            <element signature="e#3084#3085#0" expanded="true" />
+            <element signature="e#3113#3114#0" expanded="true" />
+            <element signature="e#3170#3171#0" expanded="true" />
+            <element signature="e#3206#3207#0" expanded="true" />
+            <element signature="method#addToGoodsList#0;class#Exchange#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Market/Market.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+          <folding>
+            <element signature="method#buy#0;class#Market#0" expanded="false" />
+            <element signature="method#buy#1;class#Market#0" expanded="false" />
+            <element signature="method#getRandomGood#0;class#Market#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Market/RawMaterialsMarket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="method#RawMaterialsMarket#0;class#RawMaterialsMarket#0" expanded="false" />
+            <element signature="method#buy#0;class#RawMaterialsMarket#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Market/ShareIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="51" column="49" lean-forward="false" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
+          <folding>
+            <element signature="method#run#0;class#ShareIndex#0" expanded="false" />
+            <element signature="method#ShareIndex#0;class#ShareIndex#0" expanded="false" />
+            <element signature="method#terminate#0;class#ShareIndex#0" expanded="false" />
+            <element signature="method#deleteFromList#0;class#ShareIndex#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/StartPageView.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="61" lean-forward="false" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/Clients/InvestmentFund.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="method#InvestmentFund#0;class#InvestmentFund#0" expanded="false" />
+            <element signature="method#work#0;class#InvestmentFund#0" expanded="false" />
+            <element signature="method#buy#0;class#InvestmentFund#0" expanded="false" />
+            <element signature="method#setCurrentValue#0;class#InvestmentFund#0" expanded="false" />
+            <element signature="method#bought#0;class#InvestmentFund#0" expanded="false" />
+            <element signature="method#repurchase#0;class#InvestmentFund#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63378">
-          <caret line="3176" column="2" lean-forward="false" selection-start-line="3176" selection-start-column="2" selection-end-line="3176" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/AddPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+        <state relative-caret-position="588">
+          <caret line="1772" column="0" lean-forward="false" selection-start-line="1772" selection-start-column="0" selection-end-line="1772" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/PopUpController.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/CurrencyDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        <state relative-caret-position="515">
+          <caret line="97" column="51" lean-forward="false" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
+          <folding>
+            <element signature="e#3062#3063#0" expanded="true" />
+            <element signature="e#3130#3131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestmentFundDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="110" column="51" lean-forward="false" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
+          <folding>
+            <element signature="e#3558#3559#0" expanded="true" />
+            <element signature="e#3626#3627#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Investor.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="142" lean-forward="true" selection-start-line="16" selection-start-column="142" selection-end-line="16" selection-end-column="142" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/RawMaterialsDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="98" column="51" lean-forward="false" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
+            <element signature="e#3049#3050#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/CompanyDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="126" column="75" lean-forward="true" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="75" />
+          <folding>
+            <element signature="e#4611#4612#0" expanded="true" />
+            <element signature="e#4678#4679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/Chart.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/StartPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="68" selection-end-line="47" selection-end-column="68" />
+          <folding>
+            <element signature="e#1336#1337#0" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/MenuFunctionality.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+          <folding>
+            <element signature="method#addNewInvestor#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#addNewInvestmentFund#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#addNewCompany#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#addNewCurrency#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#addNewExchange#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#addNewRawMaterial#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#getErrorMessage#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="e#4943#4944#0" expanded="true" />
+            <element signature="method#save#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#read#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#setErrorMessage#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#setErrorMessage#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#addCompanyToExchanges#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#addCompanyToExchanges#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#checkItemOccurance#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#checkItemOccurance#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#getRandomGoods#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#getRandomGoods#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#buyParticipationUnits#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#buyParticipationUnits#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#buyOnRandomMarket#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#buyOnRandomMarket#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#setDisplayedObject#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#setDisplayedObject#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#getGood#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#getGood#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#getGoodValue#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#getGoodValue#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#goodHasBeenDeleted#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#goodHasBeenDeleted#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#deleteObject#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#deleteObject#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#addChartLine#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#addChartLine#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#checkOccuranceInChart#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#checkOccuranceInChart#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#deleteChartLine#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#deleteChartLine#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#getChartIdList#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#getChartIdList#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="docComment;method#repurchase#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#repurchase#0;class#MenuFunctionality#0" expanded="false" />
+            <element signature="method#sellGood#0;class#MenuFunctionality#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -687,213 +1177,18 @@
     <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/ChartController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="50" column="49" lean-forward="false" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/doedycji">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="52" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/StartPageView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="82" lean-forward="false" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/jre/lib/rt.jar!/java/io/FileOutputStream.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Market/CurrencyMarket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/EmptyGeneratorPopUp.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding>
-            <marker date="1515326354107" expanded="true" signature="506:556" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/StartPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
-          <folding>
-            <element signature="e#1265#1266#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/ChartLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/Purchase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/SaveRead.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="43" column="40" lean-forward="false" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="35" column="141" lean-forward="true" selection-start-line="35" selection-start-column="141" selection-end-line="35" selection-end-column="141" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/RawMaterials.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="method#display#0;class#RawMaterials#0" expanded="false" />
-            <element signature="method#getOutputString#0;class#RawMaterials#0" expanded="false" />
-            <element signature="method#setValues#0;class#RawMaterials#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Market/RawMaterialsMarket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="54" lean-forward="false" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/AdditionalFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Market/Exchange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Market/Market.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_151/jre/lib/rt.jar!/java/util/List.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="67" column="6" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/CompanyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="45" column="81" lean-forward="false" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/CompanyView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/CurrencyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="41" column="79" lean-forward="false" selection-start-line="41" selection-start-column="79" selection-end-line="41" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestmentFundController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="45" column="54" lean-forward="false" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/InvestorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="42" column="81" lean-forward="false" selection-start-line="42" selection-start-column="81" selection-end-line="42" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/ExchangeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="47" column="78" lean-forward="false" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/CompanyDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <caret line="58" column="76" lean-forward="false" selection-start-line="58" selection-start-column="76" selection-end-line="58" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/PageOpener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="80" column="49" lean-forward="false" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
+        <state relative-caret-position="390">
+          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding>
+            <element signature="docComment;method#open#0;class#PageOpener#0" expanded="false" />
+            <element signature="method#open#0;class#PageOpener#0" expanded="false" />
             <element signature="method#startPage#0;class#PageOpener#0" expanded="false" />
             <element signature="method#investorPage#0;class#PageOpener#0" expanded="false" />
             <element signature="method#investmentFundPage#0;class#PageOpener#0" expanded="false" />
@@ -902,135 +1197,71 @@
             <element signature="method#exchangePage#0;class#PageOpener#0" expanded="false" />
             <element signature="method#rawMaterialPage#0;class#PageOpener#0" expanded="false" />
             <element signature="method#detailsInvestor#0;class#PageOpener#0" expanded="false" />
-            <element signature="method#detailsInvestmentFund#0;class#PageOpener#0" expanded="false" />
             <element signature="method#detailsCompany#0;class#PageOpener#0" expanded="false" />
             <element signature="method#chart#0;class#PageOpener#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/RawMaterialController.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Company.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="44" column="78" lean-forward="false" selection-start-line="44" selection-start-column="78" selection-end-line="44" selection-end-column="78" />
+        <state relative-caret-position="366">
+          <caret line="33" column="106" lean-forward="false" selection-start-line="33" selection-start-column="106" selection-end-line="33" selection-end-column="106" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Clients/Investor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="48" column="43" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
-          <folding>
-            <element signature="method#Investor#0;class#Investor#0" expanded="false" />
-            <element signature="method#display#0;class#Investor#0" expanded="false" />
-            <element signature="method#getOutputString#0;class#Investor#0" expanded="false" />
-            <element signature="method#setValues#0;class#Investor#0" expanded="false" />
-            <element signature="method#increaseBudget#0;class#Investor#0" expanded="false" />
-          </folding>
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Clients/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/Currency.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="56" column="23" lean-forward="false" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+        <state relative-caret-position="420">
+          <caret line="20" column="128" lean-forward="false" selection-start-line="20" selection-start-column="128" selection-end-line="20" selection-end-column="128" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/Goods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-          <folding>
-            <element signature="method#run#0;class#Goods#0" expanded="false" />
-            <element signature="method#terminate#0;class#Goods#0" expanded="false" />
-            <element signature="method#checkIfIsEnough#0;class#Goods#0" expanded="false" />
-            <element signature="method#display#0;class#Goods#0" expanded="false" />
-          </folding>
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/Currency.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/RawMaterials.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="420">
+          <caret line="24" column="120" lean-forward="false" selection-start-line="24" selection-start-column="120" selection-end-line="24" selection-end-column="120" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Goods/Company.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/DetailedView/InvestmentFund.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        <state relative-caret-position="420">
+          <caret line="20" column="124" lean-forward="false" selection-start-line="20" selection-start-column="124" selection-end-line="20" selection-end-column="124" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/Clients/InvestmentFund.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="119" column="6" lean-forward="true" selection-start-line="119" selection-start-column="6" selection-end-line="119" selection-end-column="6" />
-          <folding>
-            <element signature="method#InvestmentFund#0;class#InvestmentFund#0" expanded="false" />
-            <element signature="method#buyPurchases#0;class#InvestmentFund#0" expanded="false" />
-            <element signature="method#run#0;class#InvestmentFund#0" expanded="false" />
-            <element signature="method#work#0;class#InvestmentFund#0" expanded="false" />
-            <element signature="method#buy#0;class#InvestmentFund#0" expanded="false" />
-            <element signature="method#display#0;class#InvestmentFund#0" expanded="false" />
-            <element signature="method#setCurrentValue#0;class#InvestmentFund#0" expanded="false" />
-            <element signature="method#getOutputString#0;class#InvestmentFund#0" expanded="false" />
-            <element signature="method#setValues#0;class#InvestmentFund#0" expanded="false" />
-          </folding>
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/functionalClasses/MenuFunctionality.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/ExchangeView.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding>
-            <element signature="method#initialize#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#addNewInvestor#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#addNewInvestmentFund#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#addNewCompany#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#addNewCurrency#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#addNewExchange#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#addNewRawMaterial#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#getErrorMessage#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#save#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#read#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#setErrorMessage#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#addCompanyToExchanges#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#checkCompanyOccurance#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#getRandomGoods#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#buyParticipationUnits#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#buyOnRandomMarket#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#setDisplayedObject#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#getGood#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#goodHasBeenDeleted#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#deleteObject#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#addChartLine#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#checkOccuranceInChart#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#deleteChartLine#0;class#MenuFunctionality#0" expanded="false" />
-            <element signature="method#getChartIdList#0;class#MenuFunctionality#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/ShareIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AllObjects/index.java">
+    <entry file="file://$PROJECT_DIR$/src/AllObjects/GUI/DisplayTemplates/ExchangeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="515">
+          <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1040,7 +1271,13 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="library" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>unnamed</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1092,6 +1329,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1110,6 +1348,17 @@
         </settings>
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
         <settings>
           <splitter-proportions>
             <option name="proportions">

@@ -72,49 +72,6 @@ public class Exchange extends Market implements AllInstancess, Serializable {
 
 
         super.buy(client,subject, cost);
-        
-        
-        
-       /* Goods toBuy = (Goods) goodsList.get(AdditionalFunctions.getRandom(0,goodsList.size()-1));
-
-        AllPurchases purchasesList = MenuFunctionality.getPurchasesList();
-        Purchase purchase = new Purchase(client.getId(), toBuy.getId(), cost);
-
-        AllPurchases.addToList(purchase);
-        toBuy.buy(cost, client, markup);
-*/
-    }
-
-    public synchronized String getOutputString(){
-
-        String output="";
-
-        output=name + " " + country + " " + currency + " " + city + " " + adress + " " + markup + AdditionalFunctions.ListToString(indexList);
-        return output;
-    };
-
-    public synchronized Exchange setValues(String inputString){
-
-        String[] strArr = AdditionalFunctions.split(inputString);
-        Exchange output = new Exchange();
-
-        output.name = strArr[0];
-        output.country = strArr[1];
-        output.currency = strArr[2];
-        output.city= strArr[3];
-        output.adress= strArr[4];
-        output.markup = Double.parseDouble(strArr[5]);
-
-        for(int i=6; i<strArr.length; i++)
-        {
-            output.indexList.add(strArr[i]);
-        }
-
-        return output;
-    };
-
-    public synchronized void display(){
-        System.out.println("nazwa: " + name + " kraj: " + country+ " waluta: " + currency + " miasto: " + city + " adres: " + adress + "lista indeksw " + indexList + " marża: " + markup );
     }
 
     public synchronized String getName() {

@@ -6,12 +6,15 @@ import AllObjects.Goods.Company;
 import AllObjects.Goods.Goods;
 import AllObjects.Market.CurrencyMarket;
 import AllObjects.Market.RawMaterialsMarket;
-import AllObjects.ShareIndex;
+import AllObjects.Market.ShareIndex;
 
 import java.io.*;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+/**
+ * allows to save and read whole data
+ */
 public class SaveRead implements Serializable{
 
     private List<Investor> investorList;
